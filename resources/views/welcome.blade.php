@@ -25,7 +25,7 @@
     <![endif]-->
 
     <link href="css/font-awesome.css" rel="stylesheet">
-
+    <link rel="shortcut icon" href="img/path4200.png">
     <link href="css/bootstrap-social.css" rel="stylesheet" >
 
 </head>
