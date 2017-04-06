@@ -71,7 +71,7 @@
                 <div class="col-sm-7 col-xs-12 col-md-7 col-lg-7">
                     <div class="header-content">
                         <div class="header-content-inner col-md-offset-2 col-lg-offset-4">
-                            <h1 class="title">S</h1><text class="title">cinetific</text> <h1 class="title">C</h1><text class="title">omputational</text> <h1 class="title">A</h1><text class="title">pplication</text> <h1 class="title">P</h1><text class="title">rogramming</text> <h1 class="title">I</h1><text class="title">nterface</text>
+                            <h1 class="title">S</h1><text class="title">cientific</text> <h1 class="title">C</h1><text class="title">omputational</text> <h1 class="title">A</h1><text class="title">pplication</text> <h1 class="title">P</h1><text class="title">rogramming</text> <h1 class="title">I</h1><text class="title">nterface</text>
                         </div>
                     </div>
                 </div>
