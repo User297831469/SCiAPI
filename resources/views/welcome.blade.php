@@ -156,8 +156,7 @@
                                 </pre>
                             </div>
                             <div id="menu3" class="tab-pane fade wolfram">
-                                <iframe src="http://www.wolframalpha.com/widgets/view.jsp?id=eecbfe12bf874a4606bb5074f6c3634b"></iframe>
-                                <script type="text/javascript" id="WolframAlphaScripteecbfe12bf874a4606bb5074f6c3634b" src="//www.wolframalpha.com/widget/widget.jsp?id=eecbfe12bf874a4606bb5074f6c3634b&theme=black&output=iframe"></script>
+                                <script type="text/javascript" id="WolframAlphaScripteecbfe12bf874a4606bb5074f6c3634b" src="//www.wolframalpha.com/widget/widget.jsp?id=eecbfe12bf874a4606bb5074f6c3634b&output=popup"></script>
                             </div>
                         </div>
                     </div>
