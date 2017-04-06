@@ -1,95 +1,194 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    <title>SCAPI</title>
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!-- Custom CSS -->
+    <link href="css/heroic-features.css" rel="stylesheet">
 
-            .position-ref {
-                position: relative;
-            }
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+</head>
 
-            .content {
-                text-align: center;
-            }
+<body>
 
-            .title {
-                font-size: 84px;
-            }
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">SCAPI</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">API</a>
+                    </li>
+                    <li>
+                        <a href="#">Fork</a>
+                    </li>
+                    <li>
+                        <a href="#">Contribute</a>
+                    </li>
+                    <li>
+                        <a href="#">Widgets</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
+    <!-- Page Content -->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-7 col-xs-12 col-md-7 col-lg-7">
+                    <div class="header-content">
+                        <div class="header-content-inner col-md-offset-2 col-lg-offset-4">
+                            <h1 class="title">S</h1><text class="title">cinetific</text> <h1 class="title">C</h1><text class="title">omputational</text> <h1 class="title">A</h1><text class="title">pplication</text> <h1 class="title">P</h1><text class="title">rogramming</text> <h1 class="title">I</h1><text class="title">nterface</text>
+                        </div>
+                    </div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div id="spin" class="col-sm-5 col-xs-12 col-md-5 col-lg-5 spacer-2 hidden-xs hidden-sm">
+                    <img src="img/path4200.png" alt="">
                 </div>
             </div>
         </div>
-    </body>
+    </header>
+
+    <div class="container">
+
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <p>An open-source API for embedding those tough scientific computations in your application with ease. Scientific formulas and relationships have been
+            developed and implemented, let's not repeat that work every time we want to create a science-based application! This is for researchers, educators and developers.
+            </p>
+            <br>
+            <p>JavaScript API usage example:</p>
+            <br>
+            <pre>
+<span>// Requesting a calculation using a function name and parameter footprint.</span>
+<span>$.post('www.scapi-api.ca/force-between-charges(charge1[C],charge2[C],distance[m],permeability[C^2/Nxm^2])',</span>
+<span>    {</span>
+<span>          charge1: -1.60217662 × 10^-19, // Optional parameter values.</span>
+<span>          charge2: 1.60217662 × 10^-19,  // Without parameters, we will give you the code to perform the operation.</span>
+<span>          permeability: 8.85 x 10^-12,   // With parameters, we will also provide an answer.</span>
+<span>          _token: api-token              // Get an API token by signing up for free!</span>
+<span>    })</span>
+<span>    .done(function(data){</span>
+<span>          var code = data.code;      // The JavaScript code that performs the operation.</span>
+<span>          var formula = data.formula // The mathematical formula used in the computation, in text.</span>
+<span>          var result = data.result;  // The answer we calculated if you provided parameters with the request.</span>
+<span>          var widget = data.widget;  // A widget containing the formula in text, JavaScript code,</span>
+<span>                                     // an associated Wolfram Alpha widget and a related photograph.</span>
+<span>    });</span></pre>
+        </div>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>All Widgets</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="img/photos/heat-sink.jpg" alt="heat sink">
+                    <div class="caption">
+                        <h3>Thermal Conductivity</h3>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#home"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
+                            <li><a data-toggle="tab" href="#menu2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
+                            <li><a data-toggle="tab" href="#menu3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane fade in active">
+                                <img class="formula" src="img/formulas/thermal-conductivity.png" alt="">
+                                <br>
+                                <div class="text-left">
+                                    <b>P</b> is the thermal conductance, which is the amount of heat transferred per time delta t.<br>
+                                    <b>Q</b> is heat.<br>
+                                    <b>t</b> is time.<br>
+                                    <b>A</b> is the cross sectional area of the thermal conductor interface.<br>
+                                    <b>T</b> is the initial temperature difference.<br>
+                                    <b>d</b> is the thickness of the material.<br>
+                                    <b>k</b> is the thermal conductivity constant for the material.
+                                </div>
+                            </div>
+                            <div id="menu2" class="tab-pane fade text-left">
+                                <pre>
+<span>function thermal_conductivity(A,k,dT,d){</span>
+<span>      var P = (k*A*dT)/d;</span>
+<span>      return P</span>
+<span>}</span>
+                                </pre>
+                            </div>
+                            <div id="menu3" class="tab-pane fade">
+                                <script type="text/javascript" id="WolframAlphaScripteecbfe12bf874a4606bb5074f6c3634b" src="//www.wolframalpha.com/widget/widget.jsp?id=eecbfe12bf874a4606bb5074f6c3634b&theme=black&output=iframe"></script>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Hard Boot 2017</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
 </html>
