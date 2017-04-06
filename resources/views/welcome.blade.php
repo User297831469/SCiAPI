@@ -120,10 +120,11 @@
                     science or mathematics, you can add computations to the api right here on the site.
                 </p>
                 <br>
-                <div class="col-md-3 col-sm-12 text-center">
+                <div class="col-md-3 col-sm-12 text-center github">
                     <i><a href="https://github.com/MackEdweise/scapi" class="fa fa-github fa-4x icon-link"></a></i>
                 </div>
             </div>
+            <hr>
         </div>
 
         <div id="widgets">

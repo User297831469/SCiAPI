@@ -18,6 +18,11 @@
     height:250px;
 }
 
+.github{
+    height:200px;
+    width:200px;
+}
+
 @-webkit-keyframes spinnerRotate
 {
     from{-webkit-transform:rotate(0deg);}
