@@ -93,7 +93,7 @@
             <br>
             <pre>
 <span>// Requesting a calculation using a function name and parameter footprint.</span>
-<span>$.post('www.scapi-api.ca/force-between-charges(charge1[C],charge2[C],distance[m],permeability[C^2/Nxm^2])',</span>
+<span>$.post('scapi.herokuapp.com/force-between-charges(charge1[C],charge2[C],distance[m],permeability[C^2/Nxm^2])',</span>
 <span>    {</span>
 <span>          charge1: -1.60217662 × 10^-19, // Optional parameter values.</span>
 <span>          charge2: 1.60217662 × 10^-19,  // Without parameters, we will give you the code to perform the operation.</span>
