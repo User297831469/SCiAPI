@@ -25,7 +25,6 @@
     <![endif]-->
 
     <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/docs.css" rel="stylesheet" >
 
     <link href="css/bootstrap-social.css" rel="stylesheet" >
 
