@@ -52,7 +52,7 @@
                         <a href="#api">API</a>
                     </li>
                     <li>
-                        <a href="#fork">Fork</a>
+                        <a href="#contribute">Contribute</a>
                     </li>
                     <li>
                         <a href="#widgets">Widgets</a>
@@ -113,7 +113,7 @@
             <hr>
         </div>
 
-        <div id="fork">
+        <div id="contribute">
             <div class="row">
                 <div class="jumbotron">
                     <p>
