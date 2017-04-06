@@ -55,9 +55,6 @@
                         <a href="#fork">Fork</a>
                     </li>
                     <li>
-                        <a href="#contribute">Contribute</a>
-                    </li>
-                    <li>
                         <a href="#widgets">Widgets</a>
                     </li>
                 </ul>
