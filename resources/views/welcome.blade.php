@@ -121,7 +121,9 @@
                 </p>
                 <br>
                 <div class="col-md-3 col-sm-12 text-center github">
-                    <i class="github"><a class="github" href="https://github.com/MackEdweise/scapi" class="fa fa-github fa-4x icon-link"></a></i>
+                    <a class="btn btn-lg btn-social-icon btn-github">
+                        <span class="fa fa-github"></span>
+                    </a>
                 </div>
             </div>
             <hr>
