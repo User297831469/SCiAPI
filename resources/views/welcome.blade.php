@@ -160,9 +160,6 @@
                             </div>
                         </div>
                     </div>
-                    <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                    </p>
                 </div>
             </div>
 
