@@ -24,6 +24,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet" >
+
+    <link href="css/bootstrap-social.css" rel="stylesheet" >
+
 </head>
 
 <body>
