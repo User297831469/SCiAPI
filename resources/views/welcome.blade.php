@@ -45,16 +45,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">API</a>
+                        <a href="#api">API</a>
                     </li>
                     <li>
-                        <a href="#">Fork</a>
+                        <a href="#fork">Fork</a>
                     </li>
                     <li>
-                        <a href="#">Contribute</a>
+                        <a href="#contribute">Contribute</a>
                     </li>
                     <li>
-                        <a href="#">Widgets</a>
+                        <a href="#widgets">Widgets</a>
                     </li>
                 </ul>
             </div>
@@ -83,14 +83,15 @@
 
     <div class="container">
 
+        <div id="api">
         <!-- Jumbotron -->
-        <div class="jumbotron">
-            <p>An open-source API for embedding those tough scientific computations in your application with ease. Scientific formulas and relationships have been
-            developed and implemented, let's not repeat that work every time we want to create a science-based application! This is for researchers, educators and developers.
-            </p>
-            <br>
-            <p>JavaScript API usage example:</p>
-            <br>
+            <div class="jumbotron">
+                <p>An open-source API for embedding those tough scientific computations in your application with ease. Scientific formulas and relationships have been
+                developed and implemented, let's not repeat that work every time we want to create a science-based application! This is for researchers, educators and developers.
+                </p>
+                <br>
+                <p>JavaScript API usage example:</p>
+                <br>
             <pre>
 <span>// Requesting a calculation using a function name and parameter footprint.</span>
 <span>$.post('scapi.herokuapp.com/force-between-charges(charge1[C],charge2[C],distance[m],permeability[C^2/Nxm^2])',</span>
@@ -107,67 +108,81 @@
 <span>          var widget = data.widget;  // A widget containing the formula in text, JavaScript code,</span>
 <span>                                     // an associated Wolfram Alpha widget and a related photograph.</span>
 <span>    });</span></pre>
+            </div>
+            <hr>
         </div>
 
-        <hr>
-
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>All Widgets</h3>
+        <div id="fork">
+            <div class="jumbotron">
+                <p>
+                    This is an ongoing project, and anyone can participate! If you'd like to learn about Laravel, PHP, JavaScript, Restful APIs or science
+                    check out the GitHub repository. If you would ike to participate but aren't interested in coding, and know your stuff in a field of
+                    science or mathematics, you can add computations to the api right here on the site.
+                </p>
+                <br>
+                <div class="col-md-3 col-sm-12 text-center">
+                    <i><a href="https://github.com/MackEdweise/scapi" class="fa fa-github fa-4x icon-link"></a></i>
+                </div>
             </div>
         </div>
-        <!-- /.row -->
 
-        <!-- Page Features -->
-        <div class="row text-center">
+        <div id="widgets">
+            <!-- Title -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>All Widgets</h3>
+                </div>
+            </div>
+            <!-- /.row -->
 
-            <div class="col-md-4 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="img/photos/heat-sink.jpg" alt="heat sink">
-                    <div class="caption">
-                        <h3>Thermal Conductivity</h3>
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#home"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
-                            <li><a data-toggle="tab" href="#menu2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
-                            <li><a data-toggle="tab" href="#menu3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
-                        </ul>
+            <!-- Page Features -->
+            <div class="row text-center">
 
-                        <div class="tab-content">
-                            <div id="home" class="tab-pane fade in active">
-                                <img class="formula" src="img/formulas/thermal-conductivity.png" alt="">
-                                <br>
-                                <div class="text-left">
-                                    <b>P</b> is the thermal conductance, which is the amount of heat transferred per time delta t.<br>
-                                    <b>Q</b> is heat.<br>
-                                    <b>t</b> is time.<br>
-                                    <b>A</b> is the cross sectional area of the thermal conductor interface.<br>
-                                    <b>T</b> is the initial temperature difference.<br>
-                                    <b>d</b> is the thickness of the material.<br>
-                                    <b>k</b> is the thermal conductivity constant for the material.
+                <div class="col-md-4 col-sm-6 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/photos/heat-sink.jpg" alt="heat sink">
+                        <div class="caption">
+                            <h3>Thermal Conductivity</h3>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#home"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
+                                <li><a data-toggle="tab" href="#menu2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
+                                <li><a data-toggle="tab" href="#menu3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane fade in active">
+                                    <img class="formula" src="img/formulas/thermal-conductivity.png" alt="">
+                                    <br>
+                                    <div class="text-left">
+                                        <b>P</b> is the thermal conductance, which is the amount of heat transferred per time delta t.<br>
+                                        <b>Q</b> is heat.<br>
+                                        <b>t</b> is time.<br>
+                                        <b>A</b> is the cross sectional area of the thermal conductor interface.<br>
+                                        <b>T</b> is the initial temperature difference.<br>
+                                        <b>d</b> is the thickness of the material.<br>
+                                        <b>k</b> is the thermal conductivity constant for the material.
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="menu2" class="tab-pane fade text-left">
+                                <div id="menu2" class="tab-pane fade text-left">
                                 <pre>
 <span>function thermal_conductivity(A,k,dT,d){</span>
 <span>      var P = (k*A*dT)/d;</span>
 <span>      return P</span>
 <span>}</span>
-                                </pre>
-                            </div>
-                            <div id="menu3" class="tab-pane fade wolfram">
-                                <script type="text/javascript" id="WolframAlphaScripteecbfe12bf874a4606bb5074f6c3634b" src="//www.wolframalpha.com/widget/widget.jsp?id=eecbfe12bf874a4606bb5074f6c3634b&output=popup"></script>
+                                    </pre>
+                                </div>
+                                <div id="menu3" class="tab-pane fade wolfram">
+                                    <script type="text/javascript" id="WolframAlphaScripteecbfe12bf874a4606bb5074f6c3634b" src="//www.wolframalpha.com/widget/widget.jsp?id=eecbfe12bf874a4606bb5074f6c3634b&output=popup"></script>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-
+            <!-- /.row -->
+            <hr>
         </div>
-        <!-- /.row -->
-
-        <hr>
-
         <!-- Footer -->
         <footer>
             <div class="row">
