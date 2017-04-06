@@ -126,8 +126,7 @@
                         <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social-icon btn-github">
                             <span class="fa fa-github"></span>
                         </a>
-                        <br>
-                        <h3>Add Content</h3>
+                        <h3 class="spacer-2">Add Content</h3>
                         <span class="glyphicon glyphicon-arrow-down"></span>
                     </div>
                 </div>
