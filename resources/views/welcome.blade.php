@@ -175,7 +175,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Hard Boot 2017</p>
+                    <p>Copyright &copy; HardBoot 2017</p>
                 </div>
             </div>
         </footer>
