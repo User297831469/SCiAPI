@@ -78,19 +78,29 @@
                         <div class="hidden-md hidden-lg">
                             <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
                                 <div class="row">
-                                    <h1 class="title">S</h1><text class="title">cientific</text>
+                                    <div class="title-sub">
+                                        <h1 class="title">S</h1><text class="title">cientific</text>
+                                    </div>
                                 </div>
                                 <div class="row">
-                                    <h1 class="title">C</h1><text class="title">omputat</text><h1 class="title">i</h1><text class="title">onal</text>
+                                    <div class="title-sub">
+                                        <h1 class="title">C</h1><text class="title">omputat</text><h1 class="title">i</h1><text class="title">onal</text>
+                                    </div>
                                 </div>
                                 <div class="row">
-                                    <h1 class="title">A</h1><text class="title">pplication</text>
+                                    <div class="title-sub">
+                                        <h1 class="title">A</h1><text class="title">pplication</text>
+                                    </div>
                                 </div>
                                 <div class="row">
-                                    <h1 class="title">P</h1><text class="title">rogramming</text>
+                                    <div class="title-sub">
+                                        <h1 class="title">P</h1><text class="title">rogramming</text>
+                                    </div>
                                 </div>
                                 <div class="row">
-                                    <h1 class="title">I</h1><text class="title">nterface</text>
+                                    <div class="title-sub">
+                                        <h1 class="title">I</h1><text class="title">nterface</text>
+                                    </div>
                                 </div>
                             </div>
                         </div>
