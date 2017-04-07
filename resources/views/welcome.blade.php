@@ -124,7 +124,7 @@
                 </div>
             </div>
             <div class="row">
-                <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social btn-block btn-github" style="width:260px;margin-left:auto;margin-right:auto;">
+                <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social btn-block btn-github" style="width:260px;margin-left:auto;margin-right:auto;margin-top:50px;margin-bottom:25px;">
                     <span class="fa fa-github"></span> Fork the Code
                 </a>
             </div>
