@@ -33,12 +33,6 @@
     margin-bottom:50px;
 }
 
-.github-inside{
-    width:260px; !important
-    margin-left: auto; !important
-    margin-right: auto; !important
-}
-
 @-webkit-keyframes spinnerRotate
 {
     from{-webkit-transform:rotate(0deg);}
