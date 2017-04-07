@@ -257,7 +257,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Create a computation widget</h4>
                     </div>
-                    <form class="form-horizontal" name="group-form" role="form" method="POST" action="{{ route('create') }}">
+                    <form class="form-horizontal" name="group-form" enctype="multipart/form-data" role="form" method="POST" action="{{ route('create') }}">
                         {{ csrf_field() }}
                         <div class="modal-body">
                             <div class="space-inside">
