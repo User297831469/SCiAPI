@@ -122,8 +122,8 @@
                     </p>
                     <br>
                     <div class="col-md-12 col-sm-12 text-center github">
-                        <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social-icon btn-github">
-                            <span class="fa fa-github"></span>
+                        <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social btn-block btn-github">
+                            <span class="fa fa-github"></span> Fork the code
                         </a>
                     </div>
                 </div>
