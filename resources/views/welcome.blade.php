@@ -123,10 +123,12 @@
                     <br>
                 </div>
             </div>
-            <div class="row text-center">
-                <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social btn-block btn-github text-center">
-                    <span class="fa fa-github"></span> Fork the Code
-                </a>
+            <div class="row">
+                <div class="col-md-4 col-md-offsett-4 col-sm-4 col-sm-offsett-4">
+                    <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social btn-block btn-github text-center">
+                        <span class="fa fa-github"></span> Fork the Code
+                    </a>
+                </div>
             </div>
             <div class="row text-center">
                 <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module!</a>
