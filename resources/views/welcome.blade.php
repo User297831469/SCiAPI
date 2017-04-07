@@ -70,23 +70,21 @@
             <div class="row">
                 <div class="col-sm-7 col-xs-12 col-md-7 col-lg-7">
                     <div class="header-content">
-                        <div class="hidden-md hidden-lg">
-                            <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
-                                <div class="row">
-                                    <h1 class="title">S</h1><text class="title">cientific</text>
-                                </div>
-                                <div class="row">
-                                    <h1 class="title">C</h1><text class="title">omputat</text><h1 class="title">i</h1><text class="title">onal</text>
-                                </div>
-                                <div class="row">
-                                    <h1 class="title">A</h1><text class="title">pplication</text>
-                                </div>
-                                <div class="row">
-                                    <h1 class="title">P</h1><text class="title">rogramming</text>
-                                </div>
-                                <div class="row">
-                                    <h1 class="title">I</h1><text class="title">nterface</text>
-                                </div>
+                        <div class="header-content-inner text-left title-parent">
+                            <div class="row">
+                                <h1 class="title">S</h1><text class="title">cientific</text>
+                            </div>
+                            <div class="row">
+                                <h1 class="title">C</h1><text class="title">omputat</text><h1 class="title">i</h1><text class="title">onal</text>
+                            </div>
+                            <div class="row">
+                                <h1 class="title">A</h1><text class="title">pplication</text>
+                            </div>
+                            <div class="row">
+                                <h1 class="title">P</h1><text class="title">rogramming</text>
+                            </div>
+                            <div class="row">
+                                <h1 class="title">I</h1><text class="title">nterface</text>
                             </div>
                         </div>
                     </div>
