@@ -50,8 +50,12 @@
 }
 
 .title{
-    display: inline-block;
+    display: inline;
     color: #9d9d9d;
+}
+
+.title-sub{
+    margin-left: 10px;
 }
 
 .widget-tab{
