@@ -246,7 +246,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; <a href="www.hardboot.co">HardBoot</a> 2017</p>
+                    <p>Copyright &copy; <a href="http://www.hardboot.co">HardBoot</a> 2017</p>
                 </div>
             </div>
         </footer>
