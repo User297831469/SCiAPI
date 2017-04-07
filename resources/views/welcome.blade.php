@@ -246,10 +246,10 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Create a computation widget</h4>
                     </div>
-                    <div class="modal-body">
-                        <div class="space-inside">
-                            <form class="form-horizontal" name="group-form" role="form" method="POST" action="{{ route('create') }}">
-                                {{ csrf_field() }}
+                    <form class="form-horizontal" name="group-form" role="form" method="POST" action="{{ route('create') }}">
+                        {{ csrf_field() }}
+                        <div class="modal-body">
+                            <div class="space-inside">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
@@ -282,15 +282,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <button type="submit" class="btn btn-success">Create</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <button type="submit" class="btn btn-success">Create</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
