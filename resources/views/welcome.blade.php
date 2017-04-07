@@ -205,7 +205,7 @@
                         <div class="thumbnail">
                             <img src="{{ 'http://23.248.66.120:9090/'.$widget->image }}" alt="image">
                             <div class="caption">
-                                <h3>Thermal Conductivity</h3>
+                                <h3>{{ $widget->name }}</h3>
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
                                     <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
