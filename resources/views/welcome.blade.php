@@ -246,48 +246,50 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Create a computation widget</h4>
                     </div>
-                    <div class="modal-body container">
-                        <form class="form-horizontal" name="group-form" role="form" method="POST" action="{{ route('create') }}">
-                            {{ csrf_field() }}
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <h4><b>Name</b></h4>
-                                        <input required id="name" name="name" type="text" class="form-control " placeholder="Capacitance">
-                                    </div>
-                                    <div class="row">
-                                        <h4><b>Description</b></h4>
-                                        <textarea value="" required id="description" name="description" type="text" class="form-control " placeholder="Describe the formula. Note its parameters."></textarea>
-                                    </div>
-                                    <div class="row">
-                                        <h4><b>JavaScript Code</b></h4>
-                                        <textarea value="" required id="code" name="code" type="text" class="form-control " placeholder="function myFormula(){"></textarea>
-                                    </div>
-                                    <div class="row">
-                                        <h4><b>Wolfram Alpha Widget</b></h4>
-                                        <p>
-                                            In order to obtain the wolfram alpha widget link, please create your widget by following <a href="http://developer.wolframalpha.com/widgetbuilder/?_ga=1.182823846.1022345723.1491431803">Wolfram Alpha's instructions</a>.
-                                            At the end, paste the embed link with the "popup" option into this field.
-                                        </p>
-                                        <input required id="wolfram" name="wolfram" type="text" class="form-control " placeholder="<script>...</script>">
-                                    </div>
-                                    <div class="row">
-                                        <h4><b>Related Image</b></h4>
-                                        <input type="file" name="image" id="image" size="20" />
-                                    </div>
-                                    <div class="row">
-                                        <h4><b>Formula Image</b></h4>
-                                        <input type="file" name="formula" id="formula" size="20" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
+                    <div class="modal-body">
+                        <div class="space-inside">
+                            <form class="form-horizontal" name="group-form" role="form" method="POST" action="{{ route('create') }}">
+                                {{ csrf_field() }}
                                 <div class="row">
-                                    <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Create</button></a>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <h4><b>Name</b></h4>
+                                            <input required id="name" name="name" type="text" class="form-control " placeholder="Capacitance">
+                                        </div>
+                                        <div class="row">
+                                            <h4><b>Description</b></h4>
+                                            <textarea value="" required id="description" name="description" type="text" class="form-control " placeholder="Describe the formula. Note its parameters."></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <h4><b>JavaScript Code</b></h4>
+                                            <textarea value="" required id="code" name="code" type="text" class="form-control " placeholder="function myFormula(){"></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <h4><b>Wolfram Alpha Widget</b></h4>
+                                            <p>
+                                                In order to obtain the wolfram alpha widget link, please create your widget by following <a href="http://developer.wolframalpha.com/widgetbuilder/?_ga=1.182823846.1022345723.1491431803">Wolfram Alpha's instructions</a>.
+                                                At the end, paste the embed link with the "popup" option into this field.
+                                            </p>
+                                            <input required id="wolfram" name="wolfram" type="text" class="form-control " placeholder="<script>...</script>">
+                                        </div>
+                                        <div class="row">
+                                            <h4><b>Related Image</b></h4>
+                                            <input type="file" name="image" id="image" size="20" />
+                                        </div>
+                                        <div class="row">
+                                            <h4><b>Formula Image</b></h4>
+                                            <input type="file" name="formula" id="formula" size="20" />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                                <div class="modal-footer">
+                                    <div class="row">
+                                        <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Create</button></a>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <div class="row">
