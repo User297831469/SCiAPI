@@ -136,7 +136,7 @@
         </div>
 
         <div id="widgets">
-            <div class="row">
+            <div class="row text-center">
                 <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module!</a>
             </div>
             <div class="row">
