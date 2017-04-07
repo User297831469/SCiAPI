@@ -123,7 +123,7 @@
                     <br>
                 </div>
             </div>
-            <div class="row text-center github">
+            <div class="row text-center">
                 <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social btn-block btn-github">
                     <span class="fa fa-github"></span> Fork the Code
                 </a>
