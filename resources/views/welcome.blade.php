@@ -121,12 +121,12 @@
                         science or mathematics, you can add computations to the api right here on the site.
                     </p>
                     <br>
-                    <div class="col-md-12 col-sm-12 text-center github">
-                        <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social btn-block btn-github">
-                            <span class="fa fa-github"></span> Fork the Code
-                        </a>
-                    </div>
                 </div>
+            </div>
+            <div class="row text-center github">
+                <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social btn-block btn-github">
+                    <span class="fa fa-github"></span> Fork the Code
+                </a>
             </div>
             <div class="row text-center">
                 <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module!</a>
