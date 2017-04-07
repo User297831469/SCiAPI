@@ -52,13 +52,15 @@ class WidgetController
         $widget->created_at = date('Y-m-d H:i:s');
         $widget->updated_at = date('Y-m-d H:i:s');
 
+        $widget->save();
+
         $formula = $request->file('formula');
         $mime = '.'.$formula->getClientOriginalExtension();
         $formulaName = 'widget-'.$widget->id.'-formula'.$mime;
 
         SSH::into('Blue')->put($formula->getRealPath(), '/home/SCiAPI/'.$formulaName);
 
-        $widget->image = $formulaName;
+        $widget->formula = $formulaName;
 
         $image = $request->file('image');
         $mime = '.'.$image->getClientOriginalExtension();
