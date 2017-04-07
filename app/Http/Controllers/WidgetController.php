@@ -31,10 +31,10 @@ class WidgetController
         $rules = array(
             'name' => 'required',
             'description' => 'required',
-            'formula' => 'required|image',
+            'formula' => 'mimes:jpg,jpeg,png',
             'code' => 'required',
             'wolfram' => 'required',
-            'image' => 'required|image'
+            'image' => 'mimes:jpg,jpeg,png'
 
         );
 
