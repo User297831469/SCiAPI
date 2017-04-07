@@ -282,18 +282,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <div class="row">
-                                        <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Create</button></a>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                    </div>
-                                </div>
                             </form>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <div class="row">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Create</button></a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>
                 </div>
