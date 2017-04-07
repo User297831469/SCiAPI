@@ -147,48 +147,51 @@
             <!-- Page Features -->
             <div class="row text-center">
 
-                <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal"></a>
+                <div class="row">
+                    <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module!</a>
+                </div>
 
-                <div class="col-md-4 col-sm-6 hero-feature">
-                    <div class="thumbnail">
-                        <img src="img/photos/heat-sink.jpg" alt="heat sink">
-                        <div class="caption">
-                            <h3>Thermal Conductivity</h3>
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#home"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
-                                <li><a data-toggle="tab" href="#menu2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
-                                <li><a data-toggle="tab" href="#menu3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
-                            </ul>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 hero-feature">
+                        <div class="thumbnail">
+                            <img src="img/photos/heat-sink.jpg" alt="heat sink">
+                            <div class="caption">
+                                <h3>Thermal Conductivity</h3>
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#home"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
+                                    <li><a data-toggle="tab" href="#menu2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
+                                    <li><a data-toggle="tab" href="#menu3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
+                                </ul>
 
-                            <div class="tab-content">
-                                <div id="home" class="tab-pane fade in active">
-                                    <img class="formula" src="img/formulas/thermal-conductivity.png" alt="">
-                                    <br>
-                                    <div class="text-left">
-                                        <b>P</b> is the thermal conductance, which is the amount of heat transferred per time delta t.<br>
-                                        <b>Q</b> is heat.<br>
-                                        <b>t</b> is time.<br>
-                                        <b>A</b> is the cross sectional area of the thermal conductor interface.<br>
-                                        <b>T</b> is the initial temperature difference.<br>
-                                        <b>d</b> is the thickness of the material.<br>
-                                        <b>k</b> is the thermal conductivity constant for the material.
+                                <div class="tab-content">
+                                    <div id="home" class="tab-pane fade in active">
+                                        <img class="formula" src="img/formulas/thermal-conductivity.png" alt="">
+                                        <br>
+                                        <div class="text-left">
+                                            <b>P</b> is the thermal conductance, which is the amount of heat transferred per time delta t.<br>
+                                            <b>Q</b> is heat.<br>
+                                            <b>t</b> is time.<br>
+                                            <b>A</b> is the cross sectional area of the thermal conductor interface.<br>
+                                            <b>T</b> is the initial temperature difference.<br>
+                                            <b>d</b> is the thickness of the material.<br>
+                                            <b>k</b> is the thermal conductivity constant for the material.
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="menu2" class="tab-pane fade text-left">
-                                <pre>
-<span>function thermal_conductivity(A,k,dT,d){</span>
-<span>      var P = (k*A*dT)/d;</span>
-<span>      return P</span>
-<span>}</span>
-                                    </pre>
-                                </div>
-                                <div id="menu3" class="tab-pane fade wolfram">
-                                    <script type="text/javascript" id="WolframAlphaScripteecbfe12bf874a4606bb5074f6c3634b" src="//www.wolframalpha.com/widget/widget.jsp?id=eecbfe12bf874a4606bb5074f6c3634b&output=popup"></script>
+                                    <div id="menu2" class="tab-pane fade text-left">
+                                    <pre>
+    <span>function thermal_conductivity(A,k,dT,d){</span>
+    <span>      var P = (k*A*dT)/d;</span>
+    <span>      return P</span>
+    <span>}</span>
+                                        </pre>
+                                    </div>
+                                    <div id="menu3" class="tab-pane fade wolfram">
+                                        <script type="text/javascript" id="WolframAlphaScripteecbfe12bf874a4606bb5074f6c3634b" src="//www.wolframalpha.com/widget/widget.jsp?id=eecbfe12bf874a4606bb5074f6c3634b&output=popup"></script>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
                 @foreach($widgets as $widget)
 
@@ -225,6 +228,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
                 @endforeach
 
@@ -249,7 +253,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Create a computation widget</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body container">
                         <form class="form-horizontal" name="group-form" role="form" method="POST" action="{{ route('create') }}">
                             {{ csrf_field() }}
                             <div class="row">
