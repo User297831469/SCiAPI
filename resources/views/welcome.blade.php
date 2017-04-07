@@ -207,13 +207,13 @@
                             <div class="caption">
                                 <h3>Thermal Conductivity</h3>
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#home"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
-                                    <li><a data-toggle="tab" href="#menu2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
-                                    <li><a data-toggle="tab" href="#menu3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
+                                    <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
+                                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
+                                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
                                 </ul>
 
                                 <div class="tab-content">
-                                    <div id="home" class="tab-pane fade in active">
+                                    <div id="home-{{ $widget->id }}" class="tab-pane fade in active">
                                         <img class="formula" src="{{ 'http://23.248.66.120:9090/'.$widget->formula }}" alt="">
                                         <br>
                                         <div class="text-left">
@@ -222,12 +222,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div id="menu2" class="tab-pane fade text-left">
+                                    <div id="menu-{{ $widget->id }}-2" class="tab-pane fade text-left">
                                         <pre>
                                             {{ $widget->code }}
                                         </pre>
                                     </div>
-                                    <div id="menu3" class="tab-pane fade wolfram">
+                                    <div id="menu-{{ $widget->id }}-3" class="tab-pane fade wolfram">
                                         {{ $widget->wolfram }}
                                     </div>
                                 </div>
