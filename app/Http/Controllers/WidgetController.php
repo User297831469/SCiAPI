@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Models\Widgets;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -20,7 +21,9 @@ class WidgetController
 {
     public function index(){
 
-        return view('welcome');
+        $widgets = Widgets::all();
+
+        return view('welcome')->with('widgets', $widgets);
     }
 
     public function store(Request $request){
@@ -31,6 +34,7 @@ class WidgetController
             'formula' => 'required|image',
             'code' => 'required',
             'wolfram' => 'required',
+            'image' => 'required|image'
 
         );
 
@@ -54,10 +58,39 @@ class WidgetController
 
         SSH::into('Blue')->put($formula->getRealPath(), '/home/SCiAPI/'.$formulaName);
 
-        $widget->formula = $formulaName;
+        $widget->image = $formulaName;
+
+        $image = $request->file('image');
+        $mime = '.'.$image->getClientOriginalExtension();
+        $imageName = 'widget-'.$widget->id.'-image'.$mime;
+
+        SSH::into('Blue')->put($image->getRealPath(), '/home/SCiAPI/'.$imageName);
+
+        $widget->image = $imageName;
 
         $widget->save();
 
+        return Redirect::route('welcome');
+
+    }
+
+    public function reply($f, Request $request){
+
+        $widget = Widgets::where('name', '=', $f)->first();
+        $code = $widget->code;
+
+        foreach($request->all() as $input=>$val) {
+
+            str_replace($input, $val, $code);
+        }
+
+        $partial = view('_partials.widget', ['widget' => $widget]);
+        $rendered = $partial->render();
+
+        return response()->json([
+            'name' => $code,
+            'widget' => $rendered
+        ]);
     }
 
 }

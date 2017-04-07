@@ -95,17 +95,16 @@
                 <br>
             <pre>
 <span>// Requesting a calculation using a function name and parameter footprint.</span>
-<span>$.post('scapi.herokuapp.com/force-between-charges(charge1[C],charge2[C],distance[m],permeability[C^2/Nxm^2])',</span>
+<span>$.post('sciapi.herokuapp.com/force_between_charges)',</span>
 <span>    {</span>
 <span>          charge1: -1.60217662 × 10^-19, // Optional parameter values.</span>
 <span>          charge2: 1.60217662 × 10^-19,  // Without parameters, we will give you the code to perform the operation.</span>
-<span>          permeability: 8.85 x 10^-12,   // With parameters, we will also provide an answer.</span>
+<span>          permeability: 8.85 x 10^-12,   // With parameters, we will also insert the parameters into the code.</span>
 <span>          _token: api-token              // Get an API token by signing up for free!</span>
 <span>    })</span>
 <span>    .done(function(data){</span>
 <span>          var code = data.code;      // The JavaScript code that performs the operation.</span>
-<span>          var formula = data.formula // The mathematical formula used in the computation, in text.</span>
-<span>          var result = data.result;  // The answer we calculated if you provided parameters with the request.</span>
+<span>                                     // The code will be populated with any parameters provided with the request.</span>
 <span>          var widget = data.widget;  // A widget containing the formula in text, JavaScript code,</span>
 <span>                                     // an associated Wolfram Alpha widget and a related photograph.</span>
 <span>    });</span></pre>
@@ -148,6 +147,8 @@
             <!-- Page Features -->
             <div class="row text-center">
 
+                <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal"></a>
+
                 <div class="col-md-4 col-sm-6 hero-feature">
                     <div class="thumbnail">
                         <img src="img/photos/heat-sink.jpg" alt="heat sink">
@@ -189,6 +190,44 @@
                     </div>
                 </div>
 
+                @foreach($widgets as $widget)
+
+                    <div class="col-md-4 col-sm-6 hero-feature">
+                        <div class="thumbnail">
+                            <img src="{{ 'http://23.248.66.120:9090/'.$widget->image }}" alt="heat sink">
+                            <div class="caption">
+                                <h3>Thermal Conductivity</h3>
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#home"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
+                                    <li><a data-toggle="tab" href="#menu2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
+                                    <li><a data-toggle="tab" href="#menu3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="home" class="tab-pane fade in active">
+                                        <img class="formula" src="{{ 'http://23.248.66.120:9090/'.$widget->formula }}" alt="">
+                                        <br>
+                                        <div class="text-left">
+                                            <p>
+                                                {{ $widget->description }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div id="menu2" class="tab-pane fade text-left">
+                                        <pre>
+                                            {{ $widget->code }}
+                                        </pre>
+                                    </div>
+                                    <div id="menu3" class="tab-pane fade wolfram">
+                                        {{ $widget->wolfram }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                @endforeach
+
             </div>
             <!-- /.row -->
             <hr>
@@ -201,6 +240,66 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Intro modal -->
+        <div id="createModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Create a computation widget</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="group-form" role="form" method="POST" action="{{ route('create') }}">
+                            {{ csrf_field() }}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <h4><b>Name</b></h4>
+                                        <input required id="name" name="name" type="text" class="form-control " placeholder="Capacitance">
+                                    </div>
+                                    <div class="row">
+                                        <h4><b>Description</b></h4>
+                                        <textarea value="" required id="description" name="description" type="text" class="form-control " placeholder="Describe the formula. Note its parameters."></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <h4><b>JavaScript Code</b></h4>
+                                        <textarea value="" required id="code" name="code" type="text" class="form-control " placeholder="function myFormula(){"></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <h4><b>Wolfram Alpha Widget</b></h4>
+                                        <p>
+                                            In order to obtain the wolfram alpha widget link, please create your widget by following <a href="http://developer.wolframalpha.com/widgetbuilder/?_ga=1.182823846.1022345723.1491431803">Wolfram Alpha's instructions</a>.
+                                            At the end, paste the embed link with the "popup" option into this field.
+                                        </p>
+                                        <input required id="wolfram" name="wolfram" type="text" class="form-control " placeholder="<script>...</script>">
+                                    </div>
+                                    <div class="row">
+                                        <h4><b>Related Image</b></h4>
+                                        <input type="file" name="image" id="image" size="20" />
+                                    </div>
+                                    <div class="row">
+                                        <h4><b>Formula Image</b></h4>
+                                        <input type="file" name="formula" id="formula" size="20" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="row">
+                                    <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Create</button></a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!-- /.container -->
