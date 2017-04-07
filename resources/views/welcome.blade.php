@@ -125,10 +125,11 @@
                         <a href="https://github.com/MackEdweise/scapi" class="btn btn-lg btn-social-icon btn-github">
                             <span class="fa fa-github"></span>
                         </a>
-                        <h3 class="top-pad-2 text-center">Add Content</h3>
-                        <span class="glyphicon glyphicon-arrow-down"></span>
                     </div>
                 </div>
+            </div>
+            <div class="row text-center">
+                <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module!</a>
             </div>
             <div class="row">
                 <hr>
@@ -146,9 +147,6 @@
                         </ul>
                     </div>
                 @endif
-            </div>
-            <div class="row text-center">
-                <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module!</a>
             </div>
             <div class="row">
                 <div class="col-lg-12">
