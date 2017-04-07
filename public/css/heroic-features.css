@@ -35,6 +35,8 @@
 
 .btn-github{
     width:360px; !important
+    margin-left: auto; !important
+    margin-right: auto; !important
 }
 
 @-webkit-keyframes spinnerRotate
