@@ -287,7 +287,7 @@
                     </div>
                     <div class="modal-footer">
                         <div class="row">
-                            <a href="" id="modal-link-button"><button type="submit" class="btn btn-success">Create</button></a>
+                            <button type="submit" class="btn btn-success">Create</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>
