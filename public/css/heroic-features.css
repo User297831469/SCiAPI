@@ -33,6 +33,10 @@
     margin-bottom:50px;
 }
 
+.btn-github{
+    width:360px; !important
+}
+
 @-webkit-keyframes spinnerRotate
 {
     from{-webkit-transform:rotate(0deg);}
