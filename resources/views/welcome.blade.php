@@ -136,20 +136,16 @@
         </div>
 
         <div id="widgets">
-            <!-- Title -->
+            <div class="row">
+                <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module!</a>
+            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <h3>All Widgets</h3>
                 </div>
             </div>
-            <!-- /.row -->
 
-            <!-- Page Features -->
             <div class="row text-center">
-
-                <div class="row">
-                    <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module!</a>
-                </div>
 
                 <div class="row">
                     <div class="col-md-4 col-sm-6 hero-feature">
@@ -233,7 +229,6 @@
                 @endforeach
 
             </div>
-            <!-- /.row -->
             <hr>
         </div>
         <!-- Footer -->
@@ -244,8 +239,6 @@
                 </div>
             </div>
         </footer>
-
-        <!-- Intro modal -->
         <div id="createModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -304,9 +297,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- /.container -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
