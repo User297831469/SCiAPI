@@ -95,7 +95,7 @@
                 <br>
             <pre>
 <span>// Requesting a calculation using a function name and parameter footprint.</span>
-<span>$.post('sciapi.herokuapp.com/force_between_charges)',</span>
+<span>$.post('sciapi.herokuapp.com/Force_Between_Charges)',</span>
 <span>    {</span>
 <span>          charge1: -1.60217662 × 10^-19, // Optional parameter values.</span>
 <span>          charge2: 1.60217662 × 10^-19,  // Without parameters, we will give you the code to perform the operation.</span>
@@ -161,7 +161,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6 hero-feature">
                         <div class="thumbnail">
-                            <img src="img/photos/heat-sink.jpg" alt="heat sink">
+                            <img src="img/photos/heat-sink.jpg" alt="image">
                             <div class="caption">
                                 <h3>Thermal Conductivity</h3>
                                 <ul class="nav nav-tabs">
@@ -204,7 +204,7 @@
 
                     <div class="col-md-4 col-sm-6 hero-feature">
                         <div class="thumbnail">
-                            <img src="{{ 'http://23.248.66.120:9090/'.$widget->image }}" alt="heat sink">
+                            <img src="{{ 'http://23.248.66.120:9090/'.$widget->image }}" alt="image">
                             <div class="caption">
                                 <h3>Thermal Conductivity</h3>
                                 <ul class="nav nav-tabs">
