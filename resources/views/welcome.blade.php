@@ -164,6 +164,7 @@
                             <img src="img/photos/heat-sink.jpg" alt="image">
                             <div class="caption">
                                 <h3>Thermal Conductivity</h3>
+                                <h5>(Example)</h5>
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a data-toggle="tab" href="#home"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
                                     <li><a data-toggle="tab" href="#menu2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></a></li>
