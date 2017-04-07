@@ -224,7 +224,7 @@
                                     </div>
                                     <div id="menu-{{ $widget->id }}-2" class="tab-pane fade text-left">
                                         <pre>
-                                            {{ $widget->code }}
+                                            <span>{{ $widget->code }}</span>
                                         </pre>
                                     </div>
                                     <div id="menu-{{ $widget->id }}-3" class="tab-pane fade wolfram">
