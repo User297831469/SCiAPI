@@ -137,6 +137,17 @@
 
         <div id="widgets">
             <div class="row text-center">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
+            <div class="row text-center">
                 <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module!</a>
             </div>
             <div class="row">
