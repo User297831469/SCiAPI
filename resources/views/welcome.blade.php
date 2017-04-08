@@ -305,6 +305,7 @@
                                             <h4><b>JavaScript Code</b></h4>
                                             <p>
                                                 Please use unique, single character parameter names. Please make any necessary explanations in the description.
+                                                If you don't know what to put here, please enter "//TODO - need a dev!"
                                             </p>
                                             <textarea value="" required id="code" name="code" type="text" class="form-control " placeholder="function myFormula(){"></textarea>
                                         </div>
@@ -318,10 +319,16 @@
                                         </div>
                                         <div class="row">
                                             <h4><b>Related Image</b></h4>
+                                            <p>
+                                                Ideally a picture that relates to the science!
+                                            </p>
                                             <input type="file" name="image" id="image" size="20" />
                                         </div>
                                         <div class="row">
                                             <h4><b>Formula Image</b></h4>
+                                            <p>
+                                                Please upload an image of the formula in readable text.
+                                            </p>
                                             <input type="file" name="formula" id="formula" size="20" />
                                         </div>
                                     </div>
