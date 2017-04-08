@@ -216,8 +216,8 @@
                                     </div>
                                     <div id="menu2" class="tab-pane fade text-left">
                                     <pre>
-    <span>function thermal_conductivity(A,k,dT,d){</span>
-    <span>      var P = (k*A*dT)/d;</span>
+    <span>function thermal_conductivity(A,k,T,d){</span>
+    <span>      var P = (k*A*T)/d;</span>
     <span>      return P</span>
     <span>}</span>
                                         </pre>
@@ -295,7 +295,7 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <h4><b>Name</b></h4>
-                                            <input required id="name" name="name" type="text" class="form-control " placeholder="Capacitance">
+                                            <input required id="name" name="name" type="text" class="form-control" placeholder="Name the Computation.">
                                         </div>
                                         <div class="row">
                                             <h4><b>Description</b></h4>
@@ -303,6 +303,9 @@
                                         </div>
                                         <div class="row">
                                             <h4><b>JavaScript Code</b></h4>
+                                            <p>
+                                                Please use unique, single character parameter names. Please make any necessary explanations in the description.
+                                            </p>
                                             <textarea value="" required id="code" name="code" type="text" class="form-control " placeholder="function myFormula(){"></textarea>
                                         </div>
                                         <div class="row">
