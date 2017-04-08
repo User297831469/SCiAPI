@@ -261,7 +261,7 @@
                                         </pre>
                                     </div>
                                     <div id="menu-{{ $widget->id }}-3" class="tab-pane fade wolfram">
-                                        {{ html_entity_decode($widget->wolfram) }}
+                                        <!-- wolfram widget will be appended here -->
                                     </div>
                                 </div>
                             </div>
@@ -355,6 +355,19 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <script>
+
+        var wrapper = document.createElement('div');
+        var id = "";
+
+        @foreach($widgets as $widget)
+            wrapper.innerHTML= "{{ $widget->wolfram }}";
+            id = "menu-{{ $widget->id }}-3";
+            $('#' + id).append(wrapper.firstChild);
+
+        @endforeach
+
+    </script>
 </body>
 
 </html>
