@@ -255,11 +255,13 @@
                                     </div>
                                     <div id="menu-{{ $widget->id }}-2" class="tab-pane fade text-left">
                                         <pre>
-                                            <span>{{ $widget->code }}</span>
+                                            @foreach(explode("\n", $widget->code) as $line)
+                                                <span>{{ $line  }}</span>
+                                            @endforeach
                                         </pre>
                                     </div>
                                     <div id="menu-{{ $widget->id }}-3" class="tab-pane fade wolfram">
-                                        {{ $widget->wolfram }}
+                                        {{ html_entity_decode($widget->wolfram) }}
                                     </div>
                                 </div>
                             </div>
