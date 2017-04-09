@@ -361,7 +361,7 @@
 
         @foreach($widgets as $widget)
             id = "menu-{{ $widget->id }}-3";
-            $('#' + id).innerHTML("{{ $widget->wolfram }}");
+            $('#' + id).innerHTML = "{{ $widget->wolfram }}";
 
         @endforeach
 
