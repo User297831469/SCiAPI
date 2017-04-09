@@ -261,7 +261,7 @@
                                         </pre>
                                     </div>
                                     <div id="menu-{{ $widget->id }}-3" class="tab-pane fade wolfram">
-                                        {{ html_entity_decode($widget->wolfram) }}
+                                        {!! html_entity_decode($widget->wolfram) !!}
                                     </div>
                                 </div>
                             </div>
