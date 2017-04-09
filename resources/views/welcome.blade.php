@@ -292,7 +292,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Create a computation widget</h4>
+                        <h4 class="modal-title">Add a Computation</h4>
                     </div>
                     <form class="form-horizontal" name="group-form" enctype="multipart/form-data" role="form" method="POST" action="{{ route('create') }}">
                         {{ csrf_field() }}
