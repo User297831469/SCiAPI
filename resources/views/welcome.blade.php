@@ -139,10 +139,12 @@
 <span>          _token: api-token                 // Get an API token by signing up for free!</span>
 <span>    })</span>
 <span>    .done(function(data){</span>
-<span>          var code = data.code;      // The JavaScript code that performs the operation.</span>
-<span>                                     // The code will be populated with any parameters provided with the request.</span>
-<span>          var widget = data.widget;  // A widget containing the formula in text, JavaScript code,</span>
-<span>                                     // an associated Wolfram Alpha widget and a related photograph.</span>
+<span>          var code = data.code;       // The JavaScript code that performs the operation.</span>
+<span>                                      // The code will be populated with any parameters provided with the request.</span>
+<span>          var widget = data.widget;   // A widget containing the formula in text, JavaScript code,</span>
+<span>                                      // an associated Wolfram Alpha widget and a related photograph.</span>
+<span>          var message = data.message; // Feedback from the API, including any errors and suggestions.</span>
+<span>          var status = data.status;   // The status of the request.</span>
 <span>    });</span></pre>
             </div>
             <hr>
