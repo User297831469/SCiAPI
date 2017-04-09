@@ -33,7 +33,6 @@ class WidgetController
             'description' => 'required',
             'formula' => 'required|mimes:jpg,jpeg,png',
             'code' => 'required',
-            'wolfram' => 'required',
             'image' => 'mimes:jpg,jpeg,png'
 
         );
@@ -48,7 +47,6 @@ class WidgetController
         $widget->name = $request->input('name'); // store widget name
         $widget->description = $request->input('description'); // store widget description
         $widget->code = $request->input('code'); // store widget code
-        $widget->wolfram = $request->input('wolfram'); // store widget wolfram script
         $widget->created_at = date('Y-m-d H:i:s'); // log creation date
         $widget->updated_at = date('Y-m-d H:i:s'); // and update date
 
@@ -61,6 +59,11 @@ class WidgetController
         SSH::into('Blue')->put($formula->getRealPath(), '/home/SCiAPI/'.$formulaName); // store image on file server
 
         $widget->formula = $formulaName; // store image name in db
+
+        if(!is_null($request->input('wolfram'))) { // a wolfram script was provided
+
+            $widget->wolfram = $request->input('wolfram'); // store widget wolfram script
+        }
 
         if(!is_null($request->file('image'))) { // a photo was provided
 
@@ -90,35 +93,36 @@ class WidgetController
             $firstLine = $lines[0]; // get the first line, including the function name and parameters
             $body = implode("\n",array_slice($lines, 1, count($lines) - 1)); // get the body of the function
 
-            foreach($request->all() as $input => $val) { // for each parameter passed with the request
+            if(count($request->all()) > 1) { // parameters were supplied
 
-                $parameter_pos = strpos($firstLine,$input); // find the parameter in the function
+                foreach ($request->all() as $input => $val) { // for each parameter passed with the request
 
-                if(!$parameter_pos == false) { // the input is a parameter
+                    $parameter_pos = strpos($firstLine, $input); // find the parameter in the function
 
-                    if($firstLine[$parameter_pos + strlen($input)] == ','){ // the parameter is followed by a comma
+                    if (!$parameter_pos == false) { // the input is a parameter
 
-                        $left = substr($firstLine,0,$parameter_pos + strlen($input)-1); // remove the comma
-                        $right = substr($firstLine,$parameter_pos + strlen($input)+1);
-                        $firstLine = $left.$right;
+                        if ($firstLine[$parameter_pos + strlen($input)] == ',') { // the parameter is followed by a comma
+
+                            $left = substr($firstLine, 0, $parameter_pos + strlen($input) - 1); // remove the comma
+                            $right = substr($firstLine, $parameter_pos + strlen($input) + 1);
+                            $firstLine = $left . $right;
+                        }
+
+                        str_replace($input, "", $firstLine); // remove the parameter from the function footprint
+                        str_replace($input, $val, $body); // replace instances of the variable in the function body with the provided value
+                    } else { // a parameter could not be found
+
+                        return response()->json([
+                            'code' => 'parameter error',
+                            'widget' => 'parameter error',
+                            'status' => 'fail',
+                            'message' => 'an incorrect parameter was passed: ' . $input
+                        ]);
                     }
-
-                    str_replace($input, "", $firstLine); // remove the parameter from the function footprint
-                    str_replace($input, $val, $body); // replace instances of the variable in the function body with the provided value
                 }
 
-                else{ // a parameter could not be found
-
-                    return response()->json([
-                        'code' => 'parameter error',
-                        'widget' => 'parameter error',
-                        'status' => 'fail',
-                        'message' => 'an incorrect parameter was passed: '.$input
-                    ]);
-                }
+                $code = implode("\n", array_unshift($body, $firstLine)); // merge the code segments back together
             }
-
-            $code = implode("\n", array_unshift($body,$firstLine)); // merge the code segments back together
 
             $partial = view('_partials.widget', ['widget' => $widget]); // the widget partial blade template
             $rendered = $partial->render(); // render the widget

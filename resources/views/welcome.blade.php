@@ -198,43 +198,7 @@
 
                 @foreach($widgets as $widget)
 
-                    <div class="col-md-4 col-sm-6 hero-feature">
-                        <div class="thumbnail">
-                            <img src="{{ !is_null($widget->image) ? 'http://23.248.66.120:9090/'.$widget->image : 'img/path4200.png'}}" alt="image">
-                            <div class="caption">
-                                <div class="row">
-                                    <h3 class="subtitle">{{ $widget->name }}</h3><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Want to edit this because you made a mistake or think something isn't right? Let us know why and we can help." href="mailto:marcusedwards@hotmail.ca"><i class="fa fa-pencil-square fa-fw"></i></a>
-                                </div>
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
-                                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></li>
-                                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
-                                </ul>
-
-                                <div class="tab-content">
-                                    <div id="home-{{ $widget->id }}" class="tab-pane fade in active">
-                                        <img class="formula" src="{{ 'http://23.248.66.120:9090/'.$widget->formula }}" alt="">
-                                        <br>
-                                        <div class="text-left">
-                                            <p>
-                                                {{ $widget->description }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div id="menu-{{ $widget->id }}-2" class="tab-pane fade text-left">
-                                        <pre>
-                                            @foreach(explode("\n", $widget->code) as $line)
-                                                <span>{{ $line  }}</span>
-                                            @endforeach
-                                        </pre>
-                                    </div>
-                                    <div id="menu-{{ $widget->id }}-3" class="tab-pane fade wolfram">
-                                        {!! html_entity_decode($widget->wolfram) !!}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('_partials.widget', ['widget' => $widget])
 
                 @endforeach
 
@@ -264,19 +228,19 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row field">
-                                            <h4 class="subtitle"><b>Name</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Name the Computation."><i class='glyphicon glyphicon-info-sign'></i></a>
+                                            <h4 class="subtitle"><b>Name *</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Name the Computation."><i class='glyphicon glyphicon-info-sign'></i></a>
                                         </div>
                                         <div class="row field">
                                             <input required id="name" name="name" type="text" class="form-control" placeholder="Capacitance">
                                         </div>
                                         <div class="row field">
-                                            <h4 class="subtitle"><b>Description</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Describe the formula. Note its parameters."><i class='glyphicon glyphicon-info-sign'></i></a>
+                                            <h4 class="subtitle"><b>Description *</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Describe the formula. Note its parameters."><i class='glyphicon glyphicon-info-sign'></i></a>
                                         </div>
                                         <div class="row field">
                                             <textarea value="" required id="description" name="description" type="text" class="form-control " placeholder="This is a known relationship from physics, chemistry, biology, astronomy, electronics, etc."></textarea>
                                         </div>
                                         <div class="row field">
-                                            <h4 class="subtitle"><b>JavaScript Code</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Please use unique, descriptive parameter names for your function and best coding practices. Please make any necessary explanations in the description. If you don't know what to put here, please enter '//TODO - need a dev!'"><i class='glyphicon glyphicon-info-sign'></i></a>
+                                            <h4 class="subtitle"><b>JavaScript Code *</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Please use unique, descriptive parameter names for your function and best coding practices. Please make any necessary explanations in the description. If you don't know what to put here, please enter '//TODO - need a dev!'"><i class='glyphicon glyphicon-info-sign'></i></a>
                                         </div>
                                         <div class="row field">
                                             <textarea value="" required id="code" name="code" type="text" class="form-control " placeholder="function myFormula(){"></textarea>
@@ -285,7 +249,7 @@
                                             <h4 class="subtitle"><b>Wolfram Alpha Widget</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="In order to obtain the wolfram alpha widget link, please create your widget by following Wolfram Alpha's instructions at developer.wolframalpha.com /widgetbuilder. At the end, paste the embed link with the 'popup' option into this field."><i class='glyphicon glyphicon-info-sign'></i></a>
                                         </div>
                                         <div class="row field">
-                                            <input required id="wolfram" name="wolfram" type="text" class="form-control " placeholder="<script>...</script>">
+                                            <input id="wolfram" name="wolfram" type="text" class="form-control " placeholder="<script>...</script>">
                                         </div>
                                         <div class="row field">
                                             <h4 class="subtitle"><b>Related Image</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Ideally a picture that relates to the science!"><i class='glyphicon glyphicon-info-sign'></i></a>
@@ -294,10 +258,10 @@
                                             <input type="file" name="image" id="image" size="20" />
                                         </div>
                                         <div class="row field">
-                                            <h4 class="subtitle"><b>Formula Image</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Please upload an image of the formula in readable text."><i class='glyphicon glyphicon-info-sign'></i></a>
+                                            <h4 class="subtitle"><b>Formula Image *</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Please upload an image of the formula in readable text."><i class='glyphicon glyphicon-info-sign'></i></a>
                                         </div>
                                         <div class="row field">
-                                            <input type="file" name="formula" id="formula" size="20" />
+                                            <input required type="file" name="formula" id="formula" size="20" />
                                         </div>
                                     </div>
                                 </div>
