@@ -357,13 +357,13 @@
 
     <script>
 
-        var wrapper = document.createElement('div');
         var id = "";
+        var xmlString = "";
 
         @foreach($widgets as $widget)
-            wrapper.innerHTML= "{{ $widget->wolfram }}";
+            xmlString = "{{ $widget->wolfram }}", parser = new DOMParser() , doc = parser.parseFromString(xmlString, "text/xml");
             id = "menu-{{ $widget->id }}-3";
-            $('#' + id).append(wrapper.firstChild);
+            $('#' + id).append(xmlString.firstChild);
 
         @endforeach
 
