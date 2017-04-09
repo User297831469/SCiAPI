@@ -55,6 +55,7 @@
 }
 
 .my-tool-tip{
+    marigin-left: 10px;
     display: inline;
     color: #7c7c7c;
 }
