@@ -131,7 +131,7 @@
                 <br>
             <pre>
 <span>// Requesting a calculation using a function name and parameter footprint.</span>
-<span>$.post('sciapi.herokuapp.com/Force_Between_Charges)',</span>
+<span>$.post('sciapi.herokuapp.com/request/Force_Between_Charges)',</span>
 <span>    {</span>
 <span>          charge1: -1.60 * 10 ** -19,       // Optional parameter values.</span>
 <span>          charge2: 1.60 * 10 ** -19,        // Without parameters, we will give you the code to perform the operation.</span>
