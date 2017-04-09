@@ -31,7 +31,7 @@ class WidgetController
         $rules = array( // validation rules
             'name' => 'required',
             'description' => 'required',
-            'formula' => 'mimes:jpg,jpeg,png',
+            'formula' => 'required|mimes:jpg,jpeg,png',
             'code' => 'required',
             'wolfram' => 'required',
             'image' => 'mimes:jpg,jpeg,png'
@@ -62,13 +62,16 @@ class WidgetController
 
         $widget->formula = $formulaName; // store image name in db
 
-        $image = $request->file('image'); // get photo image
-        $mime = '.'.$image->getClientOriginalExtension(); // get image extension
-        $imageName = 'widget-'.$widget->id.'-image'.$mime; // create new name, for recall later
+        if(!is_null($request->file('image'))) { // a photo was provided
 
-        SSH::into('Blue')->put($image->getRealPath(), '/home/SCiAPI/'.$imageName); // store image on file server
+            $image = $request->file('image'); // get photo image
+            $mime = '.' . $image->getClientOriginalExtension(); // get image extension
+            $imageName = 'widget-' . $widget->id . '-image' . $mime; // create new name, for recall later
 
-        $widget->image = $imageName; // store image name in db
+            SSH::into('Blue')->put($image->getRealPath(), '/home/SCiAPI/' . $imageName); // store image on file server
+
+            $widget->image = $imageName; // store image name in db
+        }
 
         $widget->save(); // save widget
 

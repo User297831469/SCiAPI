@@ -200,7 +200,7 @@
 
                     <div class="col-md-4 col-sm-6 hero-feature">
                         <div class="thumbnail">
-                            <img src="{{ 'http://23.248.66.120:9090/'.$widget->image }}" alt="image">
+                            <img src="{{ !is_null($widget->image) ? 'http://23.248.66.120:9090/'.$widget->image : 'img/path4200.png'}}" alt="image">
                             <div class="caption">
                                 <div class="row">
                                     <h3 class="subtitle">{{ $widget->name }}</h3><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Want to edit this because you made a mistake or think something isn't right? Let us know why and we can help." href="mailto:marcusedwards@hotmail.ca"><i class="fa fa-pencil-square fa-fw"></i></a>
