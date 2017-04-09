@@ -296,41 +296,39 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
-                                            <h4><b>Name</b></h4>
-                                            <input required id="name" name="name" type="text" class="form-control" placeholder="Name the Computation.">
+                                            <h4><b>Name</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Name the Computation."><i class='glyphicon glyphicon-info-sign'></i></a>
                                         </div>
                                         <div class="row">
-                                            <h4><b>Description</b></h4>
-                                            <textarea value="" required id="description" name="description" type="text" class="form-control " placeholder="Describe the formula. Note its parameters."></textarea>
+                                            <input required id="name" name="name" type="text" class="form-control" placeholder="Capacitance">
                                         </div>
                                         <div class="row">
-                                            <h4><b>JavaScript Code</b></h4>
-                                            <p>
-                                                Please use unique, single character parameter names. Please make any necessary explanations in the description.
-                                                If you don't know what to put here, please enter "//TODO - need a dev!"
-                                            </p>
+                                            <h4><b>Description</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Describe the formula. Note its parameters."><i class='glyphicon glyphicon-info-sign'></i></a>
+                                        </div>
+                                        <div class="row">
+                                            <textarea value="" required id="description" name="description" type="text" class="form-control " placeholder="This is a known relationship from physics, chemistry, biology, astronomy, electronics, etc."></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <h4><b>JavaScript Code</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Please use unique, descriptive parameter names for your function and best coding practices. Please make any necessary explanations in the description. If you don't know what to put here, please enter '//TODO - need a dev!'"><i class='glyphicon glyphicon-info-sign'></i></a>
+                                        </div>
+                                        <div class="row">
                                             <textarea value="" required id="code" name="code" type="text" class="form-control " placeholder="function myFormula(){"></textarea>
                                         </div>
                                         <div class="row">
-                                            <h4><b>Wolfram Alpha Widget</b></h4>
-                                            <p>
-                                                In order to obtain the wolfram alpha widget link, please create your widget by following <a href="http://developer.wolframalpha.com/widgetbuilder/?_ga=1.182823846.1022345723.1491431803">Wolfram Alpha's instructions</a>.
-                                                At the end, paste the embed link with the "popup" option into this field.
-                                            </p>
+                                            <h4><b>Wolfram Alpha Widget</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="In order to obtain the wolfram alpha widget link, please create your widget by following Wolfram Alpha's instructions (developer.wolframalpha.com/widgetbuilder). At the end, paste the embed link with the 'popup' option into this field."><i class='glyphicon glyphicon-info-sign'></i></a>
+                                        </div>
+                                        <div class="row">
                                             <input required id="wolfram" name="wolfram" type="text" class="form-control " placeholder="<script>...</script>">
                                         </div>
                                         <div class="row">
-                                            <h4><b>Related Image</b></h4>
-                                            <p>
-                                                Ideally a picture that relates to the science!
-                                            </p>
+                                            <h4><b>Related Image</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Ideally a picture that relates to the science!"><i class='glyphicon glyphicon-info-sign'></i></a>
+                                        </div>
+                                        <div class="row">
                                             <input type="file" name="image" id="image" size="20" />
                                         </div>
                                         <div class="row">
-                                            <h4><b>Formula Image</b></h4>
-                                            <p>
-                                                Please upload an image of the formula in readable text.
-                                            </p>
+                                            <h4><b>Formula Image</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Please upload an image of the formula in readable text."><i class='glyphicon glyphicon-info-sign'></i></a>
+                                        </div>
+                                        <div class="row">
                                             <input type="file" name="formula" id="formula" size="20" />
                                         </div>
                                     </div>
@@ -354,6 +352,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        $(".my-tool-tip").tooltip();
+    </script>
 
 </body>
 
