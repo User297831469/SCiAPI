@@ -57,10 +57,15 @@
 .subtitle{
     display: inline;
     color: #363636;
+    margin-left: 10px;
+}
+
+.field{
+    margin-top:20px;
+    margin-bottom:20px;
 }
 
 .my-tool-tip{
-    marigin-left: 10px;
     display: inline;
     color: #7c7c7c;
 }
