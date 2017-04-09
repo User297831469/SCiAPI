@@ -117,7 +117,7 @@ class WidgetController
                             'code' => 'parameter error',
                             'widget' => 'parameter error',
                             'status' => 'fail',
-                            'message' => 'an incorrect parameter was passed: ' . $input
+                            'message' => 'an incorrect parameter was passed: '.$input
                         ]);
                     }
                 }
@@ -142,7 +142,7 @@ class WidgetController
                 'code' => 'not found',
                 'widget' => 'not found',
                 'status' => 'fail',
-                'message' => 'could not find a function with the name '.$f
+                'message' => 'could not find a function with the name '.$function_name
             ]);
         }
     }
