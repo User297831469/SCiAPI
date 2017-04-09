@@ -54,6 +54,11 @@
     color: #9d9d9d;
 }
 
+.subtitle{
+    display: inline;
+    color: #363636;
+}
+
 .my-tool-tip{
     marigin-left: 10px;
     display: inline;
