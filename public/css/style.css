@@ -57,17 +57,17 @@
 .subtitle{
     display: inline;
     color: #363636;
-    margin-left: 10px;
 }
 
 .field{
-    margin-top:20px;
+    margin-top:10px;
     margin-bottom:20px;
 }
 
 .my-tool-tip{
     display: inline;
     color: #7c7c7c;
+    margin-left: 10px;
 }
 
 .title-sub{
