@@ -82,9 +82,9 @@ class WidgetController
 
     }
 
-    public function reply($f = null, Request $request){
+    public function reply($function_name = null, Request $request){
 
-        $name = implode(' ',explode('_',$f)); // get name in space delimited format
+        $name = implode(' ',explode('_',$function_name)); // get name in space delimited format
         $widget = Widgets::where('name', '=', $name)->first(); // get the widget by name
 
         if(!is_null($widget)) { // if it is found
