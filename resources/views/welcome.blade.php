@@ -319,7 +319,7 @@
                                             <textarea value="" required id="code" name="code" type="text" class="form-control " placeholder="function myFormula(){"></textarea>
                                         </div>
                                         <div class="row field">
-                                            <h4 class="subtitle"><b>Wolfram Alpha Widget</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="In order to obtain the wolfram alpha widget link, please create your widget by following Wolfram Alpha's instructions (developer.wolframalpha.com/widgetbuilder). At the end, paste the embed link with the 'popup' option into this field."><i class='glyphicon glyphicon-info-sign'></i></a>
+                                            <h4 class="subtitle"><b>Wolfram Alpha Widget</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="In order to obtain the wolfram alpha widget link, please create your widget by following Wolfram Alpha's instructions at developer.wolframalpha.com /widgetbuilder. At the end, paste the embed link with the 'popup' option into this field."><i class='glyphicon glyphicon-info-sign'></i></a>
                                         </div>
                                         <div class="row field">
                                             <input required id="wolfram" name="wolfram" type="text" class="form-control " placeholder="<script>...</script>">
