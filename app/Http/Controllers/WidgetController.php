@@ -84,7 +84,8 @@ class WidgetController
 
     public function reply($f, Request $request){
 
-        $widget = Widgets::where('name', '=', $f)->first(); // get the widget by name
+        $name = implode(' ',explode('_',$f)); // get name in space delimited format
+        $widget = Widgets::where('name', '=', $name)->first(); // get the widget by name
 
         if(!is_null($widget)) { // if it is found
 

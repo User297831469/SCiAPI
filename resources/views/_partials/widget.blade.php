@@ -26,7 +26,7 @@
                 <div id="menu-{{ $widget->id }}-2" class="tab-pane fade text-left">
                     <pre>
                          @foreach(explode("\n", $widget->code) as $line)
-                            <span>{{ $line  }}</span>
+                            <span>{{ $line }}</span>
                         @endforeach
                     </pre>
                 </div>
