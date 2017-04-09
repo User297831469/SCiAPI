@@ -10,7 +10,9 @@ A request to the API returns a JSON object with two fields. One is the "code" an
 For example:
 
 {
-  "code": "function thermal_conductivity(A,k,T,d){ var P = (k*A*T)/d; return P }",
+  "code": "function thermal_conductivity(area,constant,temperature_difference,thickness){
+      var conductivity = (constant*area*temperature_difference)/thickness;
+      return conductivity;}",
   "widget" :"\<html>rendered widget view here\</html>"
 }  
 
