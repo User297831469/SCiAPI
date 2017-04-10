@@ -252,12 +252,12 @@
 
             new Clipboard('.clip-button');
 
-            $('body').on('hidden.bs.tooltip', function (e) {
-                $(e.target).data("bs.tooltip").inState = {click: false, hover: false, focus: false}
-            });
-
             $('.clip-button').tooltip({
                 trigger: 'click'
+            });
+
+            $('body').on('hidden.bs.tooltip', function (e) {
+                $(e.target).data("bs.tooltip").inState = {click: false, hover: false, focus: false}
             });
 
             $('.clip-button').on('mouseleave', function () {
