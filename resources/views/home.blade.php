@@ -256,10 +256,8 @@
                 $(e.target).data("bs.tooltip").inState = {click: false, hover: false, focus: false}
             });
 
-            $(document).ready(function () {
-                $('.clip-button').tooltip({
-                    trigger: 'click'
-                });
+            $('.clip-button').tooltip({
+                trigger: 'click'
             });
 
             $('.clip-button').on('mouseleave', function () {
