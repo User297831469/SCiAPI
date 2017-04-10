@@ -26,7 +26,7 @@ class HomeController extends Controller
             }
 
             return view('home')->with([
-                'user' => null,
+                'user' => $user,
                 'widgets' => $widgets
             ]); // return main view with authenticated user
         }
