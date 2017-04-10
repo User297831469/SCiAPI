@@ -86,7 +86,7 @@
             <div class="row text-center centered center-block">
                 @if (!is_null($user))
                     <h4>Your API Key is:</h4>
-                    <div class="input-group">
+                    <div class="input-group api-key-group">
                         <input id="clipboard-target" class="form-control" value="{{ $user->key }}" readonly>
                         <span data-toggle="tooltip" title="Copied!" class="input-group-addon btn btn-info clip-button" data-clipboard-target="#clipboard-target">
                             <img class="clippy" src="{{ URL::asset('img/clippy.svg') }}" width="15">
