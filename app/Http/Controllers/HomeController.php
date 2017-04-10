@@ -23,6 +23,7 @@ class HomeController extends Controller
             if (is_null($user->key)) { // the user has no API key yet, set one
 
                 $user->key = password_hash($user->password . $user->name . date('l jS \of F Y h:i:s A'), PASSWORD_DEFAULT);
+                $user->save();
             }
 
             return view('home')->with([
