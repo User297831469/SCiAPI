@@ -13,8 +13,8 @@
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Bootstrap Core JS -->
-        <link href="js/bootstrap.min.js" rel="stylesheet">
+        <!-- Bootstrap Core JS -->s
+        <script href="js/bootstrap.min.js"></script>
 
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
