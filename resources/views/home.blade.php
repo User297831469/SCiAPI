@@ -85,7 +85,7 @@
             </div>
             <div class="row text-center">
                 @if (!is_null($user))
-                    <p>Your token is: <code>{{ $user->key }}</code></p>
+                    <h2>Your API Key is: <code>{{ $user->key }}</code></h2>
                 @else
                     <a class="btn btn-lg btn-success" href="{{ route('register') }}">Get an API Key</a>
                 @endif
@@ -111,9 +111,9 @@
             </div>
             <div class="row text-center">
                 @if (!is_null($user))
-                    <a class="btn btn-lg btn-success" data-target="#createModal" data-toggle="modal">Add a Computation Module</a>
+                    <a class="btn btn-lg btn-success" style="width:260px;" data-target="#createModal" data-toggle="modal">Add a Computation Module</a>
                 @else
-                    <a class="btn btn-lg btn-success" href="{{ route('register') }}">Register to Add Content</a>
+                    <a class="btn btn-lg btn-success" style="width:260px;" href="{{ route('register') }}">Register to Add Content</a>
                 @endif
             </div>
             <div class="row">
