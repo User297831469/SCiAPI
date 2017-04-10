@@ -13,6 +13,9 @@
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
         <!-- Custom CSS -->
         <link href="css/style.css" rel="stylesheet">
 
