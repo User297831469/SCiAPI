@@ -83,20 +83,24 @@
                     </pre>
                 </div>
             </div>
-            <div class="row text-center centered col-md-6 col-sm-6 col-lg-6 col-xs-10">
-                @if (!is_null($user))
-                    <h4>Your API Key is:</h4>
-                    <div class="input-group">
-                        <input id="clipboard-target" class="form-control" value="{{ $user->key }}" readonly>
-                        <span data-toggle="tooltip" title="Copied!" class="input-group-addon btn btn-info clip-button" data-clipboard-target="#clipboard-target">
-                            <img class="clippy" src="{{ URL::asset('img/clippy.svg') }}" width="15">
-                        </span>
-                    </div>
-                @else
-                    <a class="btn btn-lg btn-success" href="{{ route('register') }}">Get an API Key</a>
-                @endif
+            <div class="row text-center centered">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xs-10 centered">
+                    @if (!is_null($user))
+                        <h4>Your API Key is:</h4>
+                        <div class="input-group">
+                            <input id="clipboard-target" class="form-control" value="{{ $user->key }}" readonly>
+                            <span data-toggle="tooltip" title="Copied!" class="input-group-addon btn btn-info clip-button" data-clipboard-target="#clipboard-target">
+                                <img class="clippy" src="{{ URL::asset('img/clippy.svg') }}" width="15">
+                            </span>
+                        </div>
+                    @else
+                        <a class="btn btn-lg btn-success" href="{{ route('register') }}">Get an API Key</a>
+                    @endif
+                </div>
             </div>
-            <hr>
+            <div class="row">
+                <hr>
+            </div>
         </div>
 
         <div id="contribute">
