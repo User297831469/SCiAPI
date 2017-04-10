@@ -85,7 +85,7 @@
             </div>
             <div class="row text-center">
                 @if (!is_null($user))
-                    <h2>Your API Key is: <code>{{ $user->key }}</code></h2>
+                    <h4>Your API Key is: <code>{{ $user->key }}</code></h4>
                 @else
                     <a class="btn btn-lg btn-success" href="{{ route('register') }}">Get an API Key</a>
                 @endif
