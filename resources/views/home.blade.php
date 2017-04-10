@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="row text-center centered">
-                <div class="col-md-6 col-sm-6 col-lg-6 col-xs-10 centered">
+                <div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-offset-1 col-md-6 col-sm-6 col-lg-6 col-xs-10 centered">
                     @if (!is_null($user))
                         <h4>Your API Key is:</h4>
                         <div class="input-group">
