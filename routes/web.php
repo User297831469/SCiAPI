@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WidgetController@index')->name('welcome');
+Route::get('/', 'HomeController@index')->name('home');
 Route::post('/create', 'WidgetController@store')->name('create');
 Route::post('/request/{function_name}', 'WidgetController@reply')->name('request');
 

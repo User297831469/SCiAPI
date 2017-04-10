@@ -23,7 +23,7 @@ class WidgetController
 
         $widgets = Widgets::all(); // get all widgets
 
-        return view('welcome')->with('widgets', $widgets); // return main view
+        return view('home')->with('widgets', $widgets); // return main view
     }
 
     public function store(Request $request){
@@ -40,7 +40,7 @@ class WidgetController
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return Redirect::route('welcome')->withErrors($validator); // return main view with erros
+            return Redirect::route('home')->withErrors($validator); // return main view with erros
         }
 
         $widget = new Widgets(); // other wise, create new widget
@@ -78,79 +78,91 @@ class WidgetController
 
         $widget->save(); // save widget
 
-        return Redirect::route('welcome'); // return main view
+        return Redirect::route('home'); // return main view
 
     }
 
     public function reply($function_name, Request $request){
 
-        $name = implode(' ',explode('_',$function_name)); // get name in space delimited format
-        $widget = Widgets::where('name', '=', $name)->first(); // get the widget by name
+        if(!is_null($request->input('_api_token'))) { // an API key was supplied
 
-        if(!is_null($widget)) { // if it is found
+            $user = User::where('key', '=', $request->input('_api_token'))->first(); // get the corresponding user
 
-            $code = $widget->code; // get its code
-            $lines = explode("\n", $code); // split it by its lines
-            $firstLine = $lines[0]; // get the first line, including the function name and parameters
-            $body = implode("\n",array_slice($lines, 1, count($lines) - 1)); // get the body of the function
+            if(is_null($user)){ // no user was found
 
-            if(count($request->all()) > 1) { // parameters were supplied
-
-                foreach ($request->all() as $input => $val) { // for each parameter passed with the request
-
-                    $parameter_pos = strpos($firstLine, $input); // find the parameter in the function
-
-                    if (!$parameter_pos == false) { // the input is a parameter
-
-                        if ($firstLine[$parameter_pos + strlen($input)] == ',') { // the parameter is followed by a comma
-
-                            $left = substr($firstLine, 0, $parameter_pos + strlen($input)); // remove the comma
-                            $right = substr($firstLine, $parameter_pos + strlen($input) + 1);
-                            $firstLine = $left.$right;
-                        }
-
-                        $firstLine = str_replace($input, "", $firstLine); // remove the parameter from the function footprint
-                        $body = str_replace($input, $val, $body); // replace instances of the variable in the function body with the provided value
-
-                    } else { // a parameter could not be found
-
-                        if(!($input == 'Content-Type')) { // exclude validation on content-type post parameter
-
-                            return response()->json([
-                                'code' => 'parameter error',
-                                'widget' => 'parameter error',
-                                'status' => 'fail',
-                                'message' => 'an incorrect parameter was passed: ' . $input
-                            ]);
-                        }
-                    }
-                }
-
-                $function_lines = explode("\n",$body); // get lines of body
-                array_unshift($function_lines, $firstLine); // prepend first line to body
-                $code = implode("\n", $function_lines); // merge the code segments back together
+                return response()->json([
+                    'code' => 'API key error',
+                    'widget' => 'API key error',
+                    'status' => 'fail',
+                    'message' => 'the supplied API key was not valid.'
+                ]);
             }
 
-            $partial = view('_partials.widget', ['widget' => $widget]); // the widget partial blade template
-            $rendered = $partial->render(); // render the widget
+            $name = implode(' ', explode('_', $function_name)); // get name in space delimited format
+            $widget = Widgets::where('name', '=', $name)->first(); // get the widget by name
 
-            return response()->json([
-                'code' => $code,
-                'widget' => $rendered,
-                'status' => 'success',
-                'message' => 'successfully requested function '.$widget->name
-            ]);
-        }
+            if (!is_null($widget)) { // if it is found
 
-        else { // could not find a widget by the provided name
+                $code = $widget->code; // get its code
+                $lines = explode("\n", $code); // split it by its lines
+                $firstLine = $lines[0]; // get the first line, including the function name and parameters
+                $body = implode("\n", array_slice($lines, 1, count($lines) - 1)); // get the body of the function
 
-            return response()->json([
-                'code' => 'not found',
-                'widget' => 'not found',
-                'status' => 'fail',
-                'message' => 'could not find a function with the name '.$name
-            ]);
+                if (count($request->all()) > 1) { // parameters were supplied
+
+                    foreach ($request->all() as $input => $val) { // for each parameter passed with the request
+
+                        $parameter_pos = strpos($firstLine, $input); // find the parameter in the function
+
+                        if (!$parameter_pos == false) { // the input is a parameter
+
+                            if ($firstLine[$parameter_pos + strlen($input)] == ',') { // the parameter is followed by a comma
+
+                                $left = substr($firstLine, 0, $parameter_pos + strlen($input)); // remove the comma
+                                $right = substr($firstLine, $parameter_pos + strlen($input) + 1);
+                                $firstLine = $left . $right;
+                            }
+
+                            $firstLine = str_replace($input, "", $firstLine); // remove the parameter from the function footprint
+                            $body = str_replace($input, $val, $body); // replace instances of the variable in the function body with the provided value
+
+                        } else { // a parameter could not be found
+
+                            if (!($input == 'Content-Type')) { // exclude validation on content-type post parameter
+
+                                return response()->json([
+                                    'code' => 'parameter error',
+                                    'widget' => 'parameter error',
+                                    'status' => 'fail',
+                                    'message' => 'an incorrect parameter was passed: ' . $input
+                                ]);
+                            }
+                        }
+                    }
+
+                    $function_lines = explode("\n", $body); // get lines of body
+                    array_unshift($function_lines, $firstLine); // prepend first line to body
+                    $code = implode("\n", $function_lines); // merge the code segments back together
+                }
+
+                $partial = view('_partials.widget', ['widget' => $widget]); // the widget partial blade template
+                $rendered = $partial->render(); // render the widget
+
+                return response()->json([
+                    'code' => $code,
+                    'widget' => $rendered,
+                    'status' => 'success',
+                    'message' => 'successfully requested function ' . $widget->name
+                ]);
+            } else { // could not find a widget by the provided name
+
+                return response()->json([
+                    'code' => 'not found',
+                    'widget' => 'not found',
+                    'status' => 'fail',
+                    'message' => 'could not find a function with the name ' . $name
+                ]);
+            }
         }
     }
-
 }
