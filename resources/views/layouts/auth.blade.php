@@ -58,11 +58,6 @@
                     <div class="collapse navbar-collapse" id="app-navbar-collapse">
                         <!-- Left Side Of Navbar -->
                         <ul class="nav navbar-nav">
-                            &nbsp;
-                        </ul>
-
-                        <!-- Right Side Of Navbar -->
-                        <ul class="nav navbar-nav navbar-right">
                             <!-- Authentication Links -->
                             @if (Auth::guest())
                                 <li><a href="{{ route('login') }}">Login</a></li>
@@ -84,6 +79,11 @@
                                     </ul>
                                 </li>
                             @endif
+                        </ul>
+
+                        <!-- Right Side Of Navbar -->
+                        <ul class="nav navbar-nav navbar-right">
+
                         </ul>
                     </div>
                 </div>
