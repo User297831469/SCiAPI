@@ -104,7 +104,7 @@ class WidgetController
 
                         if ($firstLine[$parameter_pos + strlen($input)] == ',') { // the parameter is followed by a comma
 
-                            $left = substr($firstLine, 0, $parameter_pos + strlen($input) - 1); // remove the comma
+                            $left = substr($firstLine, 0, $parameter_pos + strlen($input)); // remove the comma
                             $right = substr($firstLine, $parameter_pos + strlen($input) + 1);
                             $firstLine = $left.$right;
                         }
