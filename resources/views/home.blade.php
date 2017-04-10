@@ -83,7 +83,7 @@
                     </pre>
                 </div>
             </div>
-            <div class="row text-center">
+            <div class="row text-center col-md-4 col-sm-4 col-lg-4 col-xs-10">
                 @if (!is_null($user))
                     <h4>Your API Key is:</h4>
                     <div class="input-group">
@@ -245,7 +245,18 @@
 
     <script>
         $(".my-tool-tip").tooltip();
+
         new Clipboard('.clip-button');
+
+        $('body').on('hidden.bs.tooltip', function (e) {
+            $(e.target).data("bs.tooltip").inState = { click: false, hover: false, focus: false }
+        });
+
+        $(document).ready(function(){
+            $('.clip-button').tooltip({
+                trigger: 'click'
+            });
+        });
     </script>
 
 @endsection
