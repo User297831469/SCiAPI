@@ -123,7 +123,7 @@ class WidgetController
 
                         } else { // a parameter could not be found
 
-                            if (!($input == 'Content-Type')) { // exclude validation on content-type post parameter
+                            if (!($input == 'Content-Type') && !($input == '_api_key')) { // exclude validation on content-type post parameter
 
                                 return response()->json([
                                     'code' => 'parameter error',
