@@ -142,7 +142,7 @@ class WidgetController
                 'code' => 'not found',
                 'widget' => 'not found',
                 'status' => 'fail',
-                'message' => 'could not find a function with the name '.$function_name
+                'message' => 'could not find a function with the name '.$name
             ]);
         }
     }
