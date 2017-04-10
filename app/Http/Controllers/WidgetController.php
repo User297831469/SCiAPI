@@ -126,7 +126,7 @@ class WidgetController
                     }
                 }
 
-                $code = implode("\n", array_unshift($body, $firstLine)); // merge the code segments back together
+                $code = implode("\n", array_unshift(explode("\n",$body), $firstLine)); // merge the code segments back together
             }
 
             $partial = view('_partials.widget', ['widget' => $widget]); // the widget partial blade template
