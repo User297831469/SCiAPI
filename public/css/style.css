@@ -60,12 +60,6 @@
     transform: perspective(1px) translateY(-50%);
 }
 
-.centered{
-    display: inline-block;
-    margin-left: auto; !important
-    margin-right: auto; !important
-}
-
 .auth-container{
     margin-top:120px;
 }
