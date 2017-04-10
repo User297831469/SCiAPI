@@ -111,11 +111,39 @@ class WidgetController
 
                         if (!$parameter_pos == false) { // the input is a parameter
 
-                            if ($firstLine[$parameter_pos + strlen($input)] == ',') { // the parameter is followed by a comma
+                            $count = $parameter_pos + strlen($input); // start at the end of the parameter
+                            $char = $firstLine[$count];
 
-                                $left = substr($firstLine, 0, $parameter_pos + strlen($input)); // remove the comma
-                                $right = substr($firstLine, $parameter_pos + strlen($input) + 1);
+                            while(($char != ',') && ($char != ')')) { // look for the next important character after the parameter
+
+                                $count++;
+                                $char = $firstLine[$count];
+                            }
+
+                            if ($char == ',') { // the parameter is followed by a comma
+
+                                $left = substr($firstLine, 0, $count); // remove the comma
+                                $right = substr($firstLine, $count + 1);
                                 $firstLine = $left . $right;
+                            }
+
+                            else if($char == ')'){ // the parameter is followed by a bracket... it is the last one
+
+                                $count = $parameter_pos; // start at the beginning of the parameter
+                                $char = $firstLine[$count];
+
+                                while(($char != ',') && ($char != '(')) { // look for the nearest important character before the parameter
+
+                                    $count--;
+                                    $char = $firstLine[$count];
+                                }
+
+                                if ($char == ',') { // the parameter is preceeded by a comma
+
+                                    $left = substr($firstLine, 0, $count); // remove the comma
+                                    $right = substr($firstLine, $count + 1);
+                                    $firstLine = $left . $right;
+                                }
                             }
 
                             $firstLine = str_replace($input, "", $firstLine); // remove the parameter from the function footprint
