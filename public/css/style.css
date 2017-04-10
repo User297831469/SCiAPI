@@ -54,6 +54,12 @@
     color: #9d9d9d;
 }
 
+.vertical-center{
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+}
+
 .subtitle{
     display: inline;
     color: #363636;

@@ -88,8 +88,9 @@
                     </div>
                 </div>
             </nav>
-
-        @yield('content')
+        <div class="vertical-center">
+            @yield('content')
+        </div>
         </div>
 
     <!-- Scripts -->
