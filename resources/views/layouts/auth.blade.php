@@ -37,9 +37,9 @@
         window.Laravel = {!! json_encode([ 'csrfToken' => csrf_token(),]) !!};
     </script>
 </head>
-    <body>
+    <body class="vertical-center">
         <div id="app">
-            <nav class="navbar navbar-inverse navbar-fixed-top navbar-static-top" role="navigation">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
 
@@ -88,9 +88,8 @@
                     </div>
                 </div>
             </nav>
-        <div class="vertical-center">
-            @yield('content')
-        </div>
+
+        @yield('content')
         </div>
 
     <!-- Scripts -->
