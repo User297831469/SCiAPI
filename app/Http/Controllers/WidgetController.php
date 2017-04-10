@@ -126,11 +126,9 @@ class WidgetController
                     }
                 }
 
-                $body_lines = explode("\n",$body);
-
-                dd(array_unshift($body_lines, $firstLine));
-
-                $code = implode("\n", array_unshift($body_lines, $firstLine)); // merge the code segments back together
+                $function_lines = explode("\n",$body); // get lines of body
+                array_unshift($body_lines, $firstLine); // prepend first line to body
+                $code = implode("\n", $function_lines); // merge the code segments back together
             }
 
             $partial = view('_partials.widget', ['widget' => $widget]); // the widget partial blade template
