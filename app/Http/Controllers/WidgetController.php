@@ -109,8 +109,8 @@ class WidgetController
                             $firstLine = $left.$right;
                         }
 
-                        str_replace($input, "", $firstLine); // remove the parameter from the function footprint
-                        str_replace($input, $val, $body); // replace instances of the variable in the function body with the provided value
+                        $firstLine = str_replace($input, "", $firstLine); // remove the parameter from the function footprint
+                        $body = str_replace($input, $val, $body); // replace instances of the variable in the function body with the provided value
 
                     } else { // a parameter could not be found
 
