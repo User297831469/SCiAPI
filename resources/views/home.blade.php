@@ -263,7 +263,7 @@
             $('.clip-button').on('mouseleave', function () {
                 $(this).tooltip('hide');
             });
-        }
+        });
     </script>
 
 @endsection
