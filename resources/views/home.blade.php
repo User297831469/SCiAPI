@@ -83,7 +83,7 @@
                     </pre>
                 </div>
             </div>
-            <div class="row text-center col-md-4 col-sm-4 col-lg-4 col-xs-10">
+            <div class="row text-center col-md-offet-4 col-sm-offet-4 col-lg-offet-4 col-xs-offet-1 col-md-4 col-sm-4 col-lg-4 col-xs-10">
                 @if (!is_null($user))
                     <h4>Your API Key is:</h4>
                     <div class="input-group">

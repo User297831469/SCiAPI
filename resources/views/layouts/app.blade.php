@@ -24,7 +24,7 @@
         <![endif]-->
 
         <!-- clippy -->
-        <script src="dist/clipboard.min.js"></script>
+        <script src="js/clipboard.min.js"></script>
 
         <!-- Font Awesome -->
         <link href="css/font-awesome.css" rel="stylesheet">
