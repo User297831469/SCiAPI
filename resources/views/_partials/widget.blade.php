@@ -1,15 +1,15 @@
-<div class="col-md-4 col-sm-6 hero-feature">
+<div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
     <div class="thumbnail">
-        <img src="{{ !is_null($widget->image) ? 'http://23.248.66.120:9090/'.$widget->image : 'img/path4200.png'}}" alt="image">
+        <img src="{{ !is_null($widget->image) ? 'http://23.248.66.120:9090/'.$widget->image : 'http://23.248.66.120:9090/path4200.png'}}" alt="image">
         <div class="caption">
             <div class="row">
-                <h3 class="subtitle">{{ $widget->name }}</h3><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Want to edit this because you made a mistake or think something isn't right? Let us know why and we can help." href="mailto:marcusedwards@hotmail.ca"><i class="fa fa-pencil-square fa-fw"></i></a>
+                <h3 style="display: inline; color: #363636;">{{ $widget->name }}</h3><a style="display: inline; color: #7c7c7c; margin-left: 10px;" data-toggle="tooltip" data-placement="top" title="Want to edit this because you made a mistake or think something isn't right? Let us know why and we can help." href="mailto:marcusedwards@hotmail.ca"><i class="fa fa-pencil-square fa-fw"></i></a>
             </div>
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img class="widget-tab" src="img/path4200.png" alt="f(x)"></a></li>
-                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img class="widget-tab" src="img/logo-JavaScript.png" alt="JS"></a></li>
+                <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img style="width: 30px;" src="http://23.248.66.120:9090/path4200.png" alt="f(x)"></a></li>
+                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img class="widget-tab" src="http://23.248.66.120:9090/logo-JavaScript.png" alt="JS"></a></li>
                 @if(!is_null($widget->wolfram))
-                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img class="widget-tab" src="img/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
+                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://23.248.66.120:9090/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
                 @endif
             </ul>
 
@@ -31,7 +31,7 @@
                     </pre>
                 </div>
                 @if(!is_null($widget->wolfram))
-                    <div id="menu-{{ $widget->id }}-3" class="tab-pane fade wolfram">
+                    <div id="menu-{{ $widget->id }}-3" class="tab-pane fade" style="height:250px;">
                         {!! html_entity_decode($widget->wolfram) !!}
                     </div>
                 @endif
