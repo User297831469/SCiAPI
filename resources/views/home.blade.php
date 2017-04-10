@@ -200,7 +200,7 @@
                                                 <input id="wolfram" name="wolfram" type="text" class="form-control " placeholder="<script>...</script>">
                                             </div>
                                             <div class="row field">
-                                                <h4 class="subtitle"><b>Related Image</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Ideally a picture that relates to the science!"><i class='glyphicon glyphicon-info-sign'></i></a>
+                                                <h4 class="subtitle"><b>Related Photo</b></h4><a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Ideally a picture that relates to the science!"><i class='glyphicon glyphicon-info-sign'></i></a>
                                             </div>
                                             <div class="row field">
                                                 <input type="file" name="image" id="image" size="20" />
