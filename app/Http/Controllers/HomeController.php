@@ -16,6 +16,8 @@ class HomeController extends Controller
     public function index()
     {
 
+        $widgets = Widgets::all(); // get all widgets
+
         if(Auth::check()) { // user is authenticated
 
             $user = Auth::user(); // get authenticated user
@@ -31,7 +33,10 @@ class HomeController extends Controller
         }
         else{ // no user is authenticated
 
-            return view('home')->with('user', null); // return main view
+            return view('home')->with([
+                'user' => null,
+                'widgets' => $widgets
+            ]); // return main view
         }
     }
 }

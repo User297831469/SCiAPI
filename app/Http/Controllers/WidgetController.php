@@ -19,12 +19,6 @@ use SSH;
 
 class WidgetController
 {
-    public function index(){
-
-        $widgets = Widgets::all(); // get all widgets
-
-        return view('home')->with('widgets', $widgets); // return main view
-    }
 
     public function store(Request $request){
 
