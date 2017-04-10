@@ -60,6 +60,9 @@
                             <li>
                                 <a href="#widgets">Widgets</a>
                             </li>
+                            <li>
+                                <a href="{{ route('login') }}">Login</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
