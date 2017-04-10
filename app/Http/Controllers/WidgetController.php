@@ -78,9 +78,9 @@ class WidgetController
 
     public function reply($function_name, Request $request){
 
-        if(!is_null($request->input('_api_token'))) { // an API key was supplied
+        if(!is_null($request->input('_api_key'))) { // an API key was supplied
 
-            $user = User::where('key', '=', $request->input('_api_token'))->first(); // get the corresponding user
+            $user = User::where('key', '=', $request->input('_api_key'))->first(); // get the corresponding user
 
             if(is_null($user)){ // no user was found
 
