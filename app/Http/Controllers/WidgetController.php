@@ -127,7 +127,7 @@ class WidgetController
                 }
 
                 $function_lines = explode("\n",$body); // get lines of body
-                array_unshift($body_lines, $firstLine); // prepend first line to body
+                array_unshift($function_lines, $firstLine); // prepend first line to body
                 $code = implode("\n", $function_lines); // merge the code segments back together
             }
 
