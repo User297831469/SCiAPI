@@ -25,7 +25,10 @@ class HomeController extends Controller
                 $user->key = password_hash($user->password . $user->name . date('l jS \of F Y h:i:s A'), PASSWORD_DEFAULT);
             }
 
-            return view('home')->with('user', $user); // return main view with authenticated user
+            return view('home')->with([
+                'user' => null,
+                'widgets' => $widgets
+            ]); // return main view with authenticated user
         }
         else{ // no user is authenticated
 
