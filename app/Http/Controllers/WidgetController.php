@@ -111,14 +111,18 @@ class WidgetController
 
                         str_replace($input, "", $firstLine); // remove the parameter from the function footprint
                         str_replace($input, $val, $body); // replace instances of the variable in the function body with the provided value
+
                     } else { // a parameter could not be found
 
-                        return response()->json([
-                            'code' => 'parameter error',
-                            'widget' => 'parameter error',
-                            'status' => 'fail',
-                            'message' => 'an incorrect parameter was passed: '.$input
-                        ]);
+                        if(!($input == 'Content-Type')) { // exclude validation on content-type post parameter
+
+                            return response()->json([
+                                'code' => 'parameter error',
+                                'widget' => 'parameter error',
+                                'status' => 'fail',
+                                'message' => 'an incorrect parameter was passed: ' . $input
+                            ]);
+                        }
                     }
                 }
 
