@@ -10,14 +10,14 @@
 
         <title>SCiAPI</title>
 
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Bootstrap Core JS -->
         <script src="js/bootstrap.js"></script>
-
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
 
         <!-- Custom CSS -->
         <link href="css/style.css" rel="stylesheet">
