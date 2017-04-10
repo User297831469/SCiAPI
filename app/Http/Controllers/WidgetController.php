@@ -128,6 +128,8 @@ class WidgetController
 
                 $body_lines = explode("\n",$body);
 
+                dd(array_unshift($body_lines, $firstLine));
+
                 $code = implode("\n", array_unshift($body_lines, $firstLine)); // merge the code segments back together
             }
 
