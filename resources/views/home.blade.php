@@ -246,23 +246,26 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-        $(".my-tool-tip").tooltip();
+        $(document).ready(function() {
 
-        new Clipboard('.clip-button');
+            $(".my-tool-tip").tooltip();
 
-        $('body').on('hidden.bs.tooltip', function (e) {
-            $(e.target).data("bs.tooltip").inState = { click: false, hover: false, focus: false }
-        });
+            new Clipboard('.clip-button');
 
-        $(document).ready(function(){
-            $('.clip-button').tooltip({
-                trigger: 'click'
+            $('body').on('hidden.bs.tooltip', function (e) {
+                $(e.target).data("bs.tooltip").inState = {click: false, hover: false, focus: false}
             });
-        });
 
-        $('.clip-button').on('mouseleave', function(){
-            $(this).tooltip('hide');
-        });
+            $(document).ready(function () {
+                $('.clip-button').tooltip({
+                    trigger: 'click'
+                });
+            });
+
+            $('.clip-button').on('mouseleave', function () {
+                $(this).tooltip('hide');
+            });
+        }
     </script>
 
 @endsection
