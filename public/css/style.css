@@ -60,6 +60,10 @@
     transform: perspective(1px) translateY(-50%);
 }
 
+.auth-contianer{
+    margin-top:120px;
+}
+
 .subtitle{
     display: inline;
     color: #363636;

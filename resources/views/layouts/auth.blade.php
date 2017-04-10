@@ -37,7 +37,7 @@
         window.Laravel = {!! json_encode([ 'csrfToken' => csrf_token(),]) !!};
     </script>
 </head>
-    <body class="vertical-center">
+    <body>
         <div id="app">
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="container">
