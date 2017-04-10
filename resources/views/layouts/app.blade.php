@@ -23,6 +23,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+        <!-- clippy -->
+        <script src="dist/clipboard.min.js"></script>
+
         <!-- Font Awesome -->
         <link href="css/font-awesome.css" rel="stylesheet">
 

@@ -85,7 +85,13 @@
             </div>
             <div class="row text-center">
                 @if (!is_null($user))
-                    <h4>Your API Key is: <code>{{ $user->key }}</code></h4>
+                    <h4>Your API Key is:</h4>
+                    <div class="input-group">
+                        <input id="clipboard-target" class="form-control" value="{{ $user->key }}" readonly>
+                        <span data-toggle="tooltip" title="Copied!" class="input-group-addon btn btn-info clip-button" data-clipboard-target="#clipboard-target">
+                            <img class="clippy" src="{{ URL::asset('img/clippy.svg') }}" width="15">
+                        </span>
+                    </div>
                 @else
                     <a class="btn btn-lg btn-success" href="{{ route('register') }}">Get an API Key</a>
                 @endif
@@ -239,6 +245,7 @@
 
     <script>
         $(".my-tool-tip").tooltip();
+        new Clipboard('.clip-button');
     </script>
 
 @endsection
