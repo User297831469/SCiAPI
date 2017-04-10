@@ -242,6 +242,8 @@
     <script>
         $(document).ready(function() {
 
+            $(".my-tool-tip").tooltip();
+
             new Clipboard('.clip-button');
 
             $('.clip-button').tooltip({
