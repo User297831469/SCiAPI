@@ -106,7 +106,7 @@ class WidgetController
 
                             $left = substr($firstLine, 0, $parameter_pos + strlen($input) - 1); // remove the comma
                             $right = substr($firstLine, $parameter_pos + strlen($input) + 1);
-                            $firstLine = $left . $right;
+                            $firstLine = $left.$right;
                         }
 
                         str_replace($input, "", $firstLine); // remove the parameter from the function footprint
@@ -126,7 +126,9 @@ class WidgetController
                     }
                 }
 
-                $code = implode("\n", array_unshift(explode("\n",$body), $firstLine)); // merge the code segments back together
+                $body_lines = explode("\n",$body);
+
+                $code = implode("\n", array_unshift($body_lines, $firstLine)); // merge the code segments back together
             }
 
             $partial = view('_partials.widget', ['widget' => $widget]); // the widget partial blade template
