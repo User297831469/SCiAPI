@@ -261,6 +261,8 @@
             });
 
             $('.clip-button').on('mouseleave', function () {
+                console.log(this);
+                console.log(this.tooltip('hide'));
                 $(this).tooltip('hide');
             });
         });
