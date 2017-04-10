@@ -14,7 +14,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Bootstrap Core JS -->
-        <script href="js/bootstrap.js"></script>
+        <script src="js/bootstrap.js"></script>
 
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
