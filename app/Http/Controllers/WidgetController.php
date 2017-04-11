@@ -108,7 +108,7 @@ class WidgetController
 
         $widget->save(); // save to db
 
-        if(!is_null($request->input('wolfram'))) { // a formula image was provided
+        if(!is_null($request->file('formula'))) { // a formula image was provided
 
             $formula = $request->file('formula'); // get formula image
             $mime = '.' . $formula->getClientOriginalExtension(); // get image extension
