@@ -7,7 +7,7 @@
             </div>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img style="width: 30px;" src="http://23.248.66.120:9090/path4200.png" alt="f(x)"></a></li>
-                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img class="widget-tab" src="http://23.248.66.120:9090/logo-JavaScript.png" alt="JS"></a></li>
+                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img style="width: 30px;" src="http://23.248.66.120:9090/logo-JavaScript.png" alt="JS"></a></li>
                 @if(!is_null($widget->wolfram))
                     <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://23.248.66.120:9090/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
                 @endif
