@@ -49,7 +49,7 @@
             </div>
             <form class="form-horizontal" name="group-form" enctype="multipart/form-data" role="form" method="POST" action="{{ route('update') }}">
                 {{ csrf_field() }}
-                <div class="modal-body">
+                <div class="modal-body text-left">
                     <div class="space-inside">
                         <div class="row">
                             <div class="col-md-12">
