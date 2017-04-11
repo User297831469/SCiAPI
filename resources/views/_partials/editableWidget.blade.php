@@ -47,7 +47,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Edit this Computation</h4>
             </div>
-            <form class="form-horizontal" name="group-form" enctype="multipart/form-data" role="form" method="POST" action="{{ route('update') }}">
+            <form class="form-horizontal" name="group-form" enctype="multipart/form-data" role="form" method="POST" action="{{ route('update', ['id' => $widget->id]) }}">
                 {{ csrf_field() }}
                 <div class="modal-body text-left">
                     <div class="space-inside">

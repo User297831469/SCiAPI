@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@index');
 //widgets
 
 Route::post('/create', 'WidgetController@store')->name('create');
-Route::post('/update', 'WidgetController@update')->name('update');
+Route::post('/update/{id}', 'WidgetController@update')->name('update');
 
 //API
 
