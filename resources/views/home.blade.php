@@ -153,13 +153,13 @@
 
                     @foreach($widgets as $widget)
 
-                        @if(!($ownedWidgets->contains($widget->id)))
+                        @if(!is_null($ownedWidgets) && ($ownedWidgets->contains($widget->id)))
 
-                            @include('_partials.widget', ['widget' => $widget])
+                            @include('_partials.editableWidget', ['widget' => $widget])
 
                         @else
 
-                            @include('_partials.editableWidget', ['widget' => $widget])
+                            @include('_partials.widget', ['widget' => $widget])
 
                         @endif
 
