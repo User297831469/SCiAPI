@@ -251,5 +251,15 @@ class WidgetController
                 ]);
             }
         }
+
+        else { // no API key supplied
+
+            return response()->json([
+                'code' => 'API key error',
+                'widget' => 'API key error',
+                'status' => 'fail',
+                'message' => 'No API key was supplied. Please sign up for a key.'
+            ]);
+        }
     }
 }
