@@ -3,7 +3,7 @@
         <img src="{{ !is_null($widget->image) ? 'http://23.248.66.120:9090/'.$widget->image : 'http://23.248.66.120:9090/path4200.png'}}" alt="image">
         <div class="caption">
             <div class="row">
-                <h3 style="display: inline; color: #363636;">{{ $widget->name }}</h3><a class="my-tool-tip-{{ $widget->id }}" style="display: inline; color: #7c7c7c; margin-left: 10px;" data-toggle="tooltip" data-placement="top" title="Want to edit this because you made a mistake or think something isn't right? Let us know why and we can help." href="mailto:marcusedwards@hotmail.ca"><i class="fa fa-pencil-square fa-fw"></i></a>
+                <h3 style="display: inline; color: #363636;">{{ $widget->name }}</h3><a class="my-tool-tip-{{ $widget->id }}" style="display: inline; color: #7c7c7c; margin-left: 10px;" data-toggle="tooltip" data-placement="top" title="You don't have permission to edit this widget. Think something is missing or could be done better? Sign up for SCiAPI to contribute!" href="{{ route('home') }}"><i class="fa fa-pencil-square fa-fw"></i></a>
             </div>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img style="width: 30px;" src="http://23.248.66.120:9090/path4200.png" alt="f(x)"></a></li>

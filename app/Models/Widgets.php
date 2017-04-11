@@ -13,4 +13,8 @@ use Illuminate\Database\Eloquent\Model;
 class Widgets extends Model
 {
     protected $table = "widgets";
+
+    public function User(){
+        return $this->belongsTo('App\User','user_id');
+    }
 }

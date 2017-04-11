@@ -38,12 +38,15 @@ class WidgetController
             return Redirect::route('home')->withErrors($validator); // return main view with erros
         }
 
-        $widget = new Widgets(); // other wise, create new widget
+        $user = Auth::user(); // get current user
+
+        $widget = new Widgets(); // create new widget
         $widget->name = $request->input('name'); // store widget name
         $widget->description = $request->input('description'); // store widget description
         $widget->code = $request->input('code'); // store widget code
         $widget->created_at = date('Y-m-d H:i:s'); // log creation date
         $widget->updated_at = date('Y-m-d H:i:s'); // and update date
+        $widget->user_id = $user->id; // associate with owner
 
         $widget->save(); // save to db
 
@@ -54,6 +57,66 @@ class WidgetController
         SSH::into('Blue')->put($formula->getRealPath(), '/home/SCiAPI/'.$formulaName); // store image on file server
 
         $widget->formula = $formulaName; // store image name in db
+
+        if(!is_null($request->input('wolfram'))) { // a wolfram script was provided
+
+            $widget->wolfram = $request->input('wolfram'); // store widget wolfram script
+        }
+
+        if(!is_null($request->file('image'))) { // a photo was provided
+
+            $image = $request->file('image'); // get photo image
+            $mime = '.' . $image->getClientOriginalExtension(); // get image extension
+            $imageName = 'widget-' . $widget->id . '-image' . $mime; // create new name, for recall later
+
+            SSH::into('Blue')->put($image->getRealPath(), '/home/SCiAPI/' . $imageName); // store image on file server
+
+            $widget->image = $imageName; // store image name in db
+        }
+
+        $widget->save(); // save widget
+
+        return Redirect::route('home'); // return main view
+
+    }
+
+    public function update($id, Request $request){
+
+        $rules = array( // validation rules
+            'name' => 'required',
+            'description' => 'required',
+            'formula' => 'mimes:jpg,jpeg,png',
+            'code' => 'required',
+            'image' => 'mimes:jpg,jpeg,png',
+
+        );
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return Redirect::route('home')->withErrors($validator); // return main view with erros
+        }
+
+        $user = Auth::user(); // get user
+
+        $widget = Widgets::where('id', '=', $id)->first(); // get widget to update
+        $widget->name = $request->input('name'); // store widget name
+        $widget->description = $request->input('description'); // store widget description
+        $widget->code = $request->input('code'); // store widget code
+        $widget->updated_at = date('Y-m-d H:i:s'); // log update date
+
+        $widget->save(); // save to db
+
+        if(!is_null($request->input('wolfram'))) { // a formula image was provided
+
+            $formula = $request->file('formula'); // get formula image
+            $mime = '.' . $formula->getClientOriginalExtension(); // get image extension
+            $formulaName = 'widget-' . $widget->id . '-formula' . $mime; // create new name, for recall later
+
+            SSH::into('Blue')->put($formula->getRealPath(), '/home/SCiAPI/' . $formulaName); // store image on file server
+
+            $widget->formula = $formulaName; // store image name in db
+        }
 
         if(!is_null($request->input('wolfram'))) { // a wolfram script was provided
 

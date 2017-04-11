@@ -11,10 +11,20 @@
 |
 */
 
+//home
+
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
+
+//widgets
+
 Route::post('/create', 'WidgetController@store')->name('create');
+Route::post('/update', 'WidgetController@update')->name('update');
+
+//API
+
 Route::post('/request/{function_name}', 'WidgetController@reply')->name('request');
 
-Auth::routes();
+//auth
 
-Route::get('/home', 'HomeController@index');
+Auth::routes();

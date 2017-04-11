@@ -18,6 +18,8 @@ class HomeController extends Controller
 
             $user = Auth::user(); // get authenticated user
 
+            $ownedWidgets = $user->Widgets()->get(); // get the user's widgets
+
             date_default_timezone_set('UTC'); // set timezone for date function
 
             if (is_null($user->key)) { // the user has no API key yet, set one
@@ -28,14 +30,16 @@ class HomeController extends Controller
 
             return view('home')->with([
                 'user' => $user,
-                'widgets' => $widgets
+                'widgets' => $widgets,
+                'ownedWidgets' => $ownedWidgets
             ]); // return main view with authenticated user
         }
         else{ // no user is authenticated
 
             return view('home')->with([
                 'user' => null,
-                'widgets' => $widgets
+                'widgets' => $widgets,
+                'ownedWidgets' => null
             ]); // return main view
         }
     }
