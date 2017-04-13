@@ -34,9 +34,9 @@ return [
 
     'connections' => [
         'Blue' => [
-            'host'      => '23.248.66.120',
-            'username'  => 'Leadme',
-            'password'  => 'emdaelterces',
+            'host'      => env('BLUE_HOST'),
+            'username'  => env('BLUE_USR'),
+            'password'  => env('BLUE_PSWD'),
             'key'       => '',
             'keytext'   => '',
             'keyphrase' => '',
