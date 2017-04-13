@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div id="menu-{{ $widget->id }}-2" class="tab-pane fade text-left">
-                    <pre>
+                    <pre id="code-{{ $widget->id }}">
                          @foreach(explode("\n", $widget->code) as $line)
                             <span>{{ $line }}</span>
                         @endforeach
@@ -39,7 +39,32 @@
         </div>
     </div>
 </div>
+<style>
+    #code-{{ $widget->id }} {
+        background: #303030;
+        color: #f1f1f1;
+        padding: 10px 16px;
+        border-radius: 2px;
+        border-top: 4px solid #00aeef;
+        -moz-box-shadow: inset 0 0 10px #000;
+        box-shadow: inset 0 0 10px #000;
+    }
 
+    #code-{{ $widget->id }} span {
+        display: block;
+        line-height: 1.5rem;
+        counter-increment: line;
+    }
+    #code-{{ $widget->id }} span:before {
+
+        content: counter(line);
+        display: inline-block;
+        padding: 0 .5em;
+        margin-right: .5em;
+        color: #888
+
+    }
+</style>
 <div id="updateModal-{{ $widget->id }}" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
