@@ -63,7 +63,7 @@
                     <br>
                     <p>JavaScript API usage example:</p>
                     <br>
-                    <pre>
+                    <pre class="code-example">
 <span>// Requesting a calculation using a function name and parameter footprint.</span>
 <span>$.post('sciapi.herokuapp.com/request/Force_Between_Charges)',</span>
 <span>    {</span>
