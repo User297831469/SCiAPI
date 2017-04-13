@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div id="spin" class="col-sm-5 col-xs-12 col-md-5 col-lg-5 spacer-2 hidden-xs hidden-sm">
-                    <img src="img/path4200.png" alt="">
+                    <img src="img/atom.png" alt="">
                 </div>
             </div>
         </div>

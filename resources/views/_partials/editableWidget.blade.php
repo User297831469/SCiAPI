@@ -6,7 +6,7 @@
                 <h3 style="display: inline; color: #363636;">{{ $widget->name }}</h3><a class="my-tool-tip-{{ $widget->id }}" style="display: inline; color: #7c7c7c; margin-left: 10px;" data-target="#updateModal-{{ $widget->id }}" data-toggle="modal"><i class="fa fa-pencil-square fa-fw"></i></a>
             </div>
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img style="width: 30px;" src="http://23.248.66.120:9090/path4200.png" alt="f(x)"></a></li>
+                <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img style="width: 30px;" src="http://23.248.66.120:9090/atom-icon.png" alt="f(x)"></a></li>
                 <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img style="width: 30px;" src="http://23.248.66.120:9090/logo-JavaScript.png" alt="JS"></a></li>
                 @if(!is_null($widget->wolfram))
                     <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://23.248.66.120:9090/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
