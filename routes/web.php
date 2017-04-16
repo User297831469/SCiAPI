@@ -23,7 +23,7 @@ Route::post('/update/{id}', 'WidgetController@update')->name('update');
 
 //API
 
-Route::post('/request/{function_name}', 'WidgetController@reply')->name('request');
+Route::post('/request/{function_name}', 'WidgetController@reply')->name('request')->middleware('cors');
 
 //auth
 
