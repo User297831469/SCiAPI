@@ -154,7 +154,7 @@ class WidgetController
                     'widget' => 'API key error',
                     'status' => 'fail',
                     'message' => 'the supplied API key was not valid.'
-                ]);
+                ],400);
             }
 
             $name = implode(' ', explode('_', $function_name)); // get name in space delimited format
@@ -222,7 +222,7 @@ class WidgetController
                                     'widget' => 'parameter error',
                                     'status' => 'fail',
                                     'message' => 'an incorrect parameter was passed: ' . $input
-                                ]);
+                                ],400);
                             }
                         }
                     }
@@ -240,7 +240,7 @@ class WidgetController
                     'widget' => $rendered,
                     'status' => 'success',
                     'message' => 'successfully requested function ' . $widget->name
-                ]);
+                ],200);
             } else { // could not find a widget by the provided name
 
                 return response()->json([
@@ -248,7 +248,7 @@ class WidgetController
                     'widget' => 'not found',
                     'status' => 'fail',
                     'message' => 'could not find a function with the name ' . $name
-                ]);
+                ],401);
             }
         }
 
@@ -259,7 +259,7 @@ class WidgetController
                 'widget' => 'API key error',
                 'status' => 'fail',
                 'message' => 'No API key was supplied. Please sign up for a key.'
-            ]);
+            ],400);
         }
     }
 }
