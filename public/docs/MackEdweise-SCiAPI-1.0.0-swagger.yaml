@@ -34,7 +34,7 @@ paths:
       parameters:
       - in: path
         name: Function_Name
-        description: Required to retrieve a function
+        description: Required to retrieve a function.
         required: true
         type: string
       - in: body
