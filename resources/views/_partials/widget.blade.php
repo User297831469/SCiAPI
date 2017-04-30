@@ -1,7 +1,7 @@
 <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
     <div class="thumbnail">
-        <div style="width:inherit;overflow-y:hidden;">
-            <img src="{{ !is_null($widget->image) ? 'http://23.248.66.120:9090/'.$widget->image : 'http://23.248.66.120:9090/half-atom.png'}}" alt="image">
+        <div style="height:160px;width:inherit;overflow-y:hidden;">
+            <img style="width:inherit;" src="{{ !is_null($widget->image) ? 'http://23.248.66.120:9090/'.$widget->image : 'http://23.248.66.120:9090/half-atom.png'}}" alt="image">
         </div>
         <div style="height:350px;" class="caption">
             <div class="row text-center">
