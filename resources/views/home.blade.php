@@ -84,6 +84,10 @@
                 </div>
             </div>
             <div class="row text-center centered center-block">
+                <h4>Follow SCiAPI on Hitch</h4>
+                <br>
+                <script type="text/javascript" src="https://c.hitchhq.net/-/js/widget.js" api="sciapi" theme="blue"></script>
+                <br>
                 @if (!is_null($user))
                     <h4>Your API Key is:</h4>
                     <div class="input-group api-key-group">
