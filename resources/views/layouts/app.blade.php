@@ -41,6 +41,9 @@
         <!-- Bootstrap  Social Icons -->
         <link href="css/bootstrap-social.css" rel="stylesheet" >
 
+        <!-- three.js-->
+        <script src="js/three.min.js"></script>
+
     </head>
     <body>
         <div id="app">

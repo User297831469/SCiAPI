@@ -51,7 +51,7 @@
                         var scene = new THREE.Scene();
                         scene.background = new THREE.Color( 0x555555 );
 
-                        var aspectRatio = window.innerWidth / window.innerHeight;
+                        var aspectRatio = 1;
                         var camera = new THREE.PerspectiveCamera(75, aspectRatio, 1, 10000);
                         camera.position.z = 350;
                         scene.add(camera);
@@ -76,7 +76,7 @@
                         electron3.position.set(0,0,150);
 
                         var renderer = new THREE.WebGLRenderer();
-                        renderer.setSize(window.innerWidth, window.innerHeight);
+                        renderer.setSize(200, 200);
 
                         document.body.appendChild(renderer.domElement);
 
