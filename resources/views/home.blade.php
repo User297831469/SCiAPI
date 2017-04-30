@@ -46,66 +46,6 @@
                 </div>
                 <div id="spin" class="col-sm-5 col-xs-12 col-md-5 col-lg-5 spacer-2 hidden-xs hidden-sm">
                     <!--<img src="img/atom.png" alt="">-->
-                    <script>
-
-                        var scene = new THREE.Scene();
-                        scene.background = new THREE.Color( 0x555555 );
-
-                        var aspectRatio = 1;
-                        var camera = new THREE.PerspectiveCamera(75, aspectRatio, 1, 10000);
-                        camera.position.z = 350;
-                        scene.add(camera);
-
-                        var shape = new THREE.SphereGeometry(50, 20, 20);
-                        var cover = new THREE.MeshBasicMaterial({color:0x979797,wireframe:true});
-                        var nucleus = new THREE.Mesh(shape, cover);
-                        scene.add(nucleus);
-
-                        var electronShape = new THREE.SphereGeometry(20, 20, 20);
-                        var electron1 = new THREE.Mesh(electronShape, cover);
-                        nucleus.add(electron1);
-
-                        electron1.position.set(-150,150,0);
-
-                        var electron2 = new THREE.Mesh(electronShape, cover);
-                        nucleus.add(electron2);
-                        electron2.position.set(150,150,0);
-
-                        var electron3 = new THREE.Mesh(electronShape, cover);
-                        nucleus.add(electron3);
-                        electron3.position.set(0,0,150);
-
-                        var renderer = new THREE.WebGLRenderer();
-                        renderer.setSize(200, 200);
-
-                        document.body.appendChild(renderer.domElement);
-
-                        var clock = new THREE.Clock();
-
-                        function animate() {
-                            requestAnimationFrame(animate);
-
-                            var t = clock.getElapsedTime();
-
-                            renderer.render(scene, camera);
-
-                            electron1.position.x = Math.sin(5*t) * -100;
-                            electron1.position.y = Math.sin(5*t) * 100;
-                            electron1.position.z = Math.cos(5*t) * 100;
-
-                            electron2.position.x = Math.cos(5*t) * 100;
-                            electron2.position.y = Math.cos(5*t) * 100;
-                            electron2.position.z = Math.sin(5*t) * 100;
-
-                            var tOffset = 1.5 + clock.getElapsedTime();
-
-                            electron3.position.x = 0;
-                            electron3.position.y = Math.sin(5*tOffset) * 100;
-                            electron3.position.z = Math.cos(5*tOffset) * 100;
-                        }
-
-                        animate();
-                    </script>
                 </div>
             </div>
         </div>
@@ -330,6 +270,66 @@
                 $(this).tooltip('hide');
             });
         });
+
+        //three.js atom
+
+        var scene = new THREE.Scene();
+        scene.background = new THREE.Color( 0x555555 );
+
+        var aspectRatio = 1;
+        var camera = new THREE.PerspectiveCamera(75, aspectRatio, 1, 10000);
+        camera.position.z = 350;
+        scene.add(camera);
+
+        var shape = new THREE.SphereGeometry(50, 20, 20);
+        var cover = new THREE.MeshBasicMaterial({color:0x979797,wireframe:true});
+        var nucleus = new THREE.Mesh(shape, cover);
+        scene.add(nucleus);
+
+        var electronShape = new THREE.SphereGeometry(20, 20, 20);
+        var electron1 = new THREE.Mesh(electronShape, cover);
+        nucleus.add(electron1);
+
+        electron1.position.set(-150,150,0);
+
+        var electron2 = new THREE.Mesh(electronShape, cover);
+        nucleus.add(electron2);
+        electron2.position.set(150,150,0);
+
+        var electron3 = new THREE.Mesh(electronShape, cover);
+        nucleus.add(electron3);
+        electron3.position.set(0,0,150);
+
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(200, 200);
+
+        $('#spin').append(renderer.domElement);
+
+        var clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            var t = clock.getElapsedTime();
+
+            renderer.render(scene, camera);
+
+            electron1.position.x = Math.sin(5*t) * -100;
+            electron1.position.y = Math.sin(5*t) * 100;
+            electron1.position.z = Math.cos(5*t) * 100;
+
+            electron2.position.x = Math.cos(5*t) * 100;
+            electron2.position.y = Math.cos(5*t) * 100;
+            electron2.position.z = Math.sin(5*t) * 100;
+
+            var tOffset = 1.5 + clock.getElapsedTime();
+
+            electron3.position.x = 0;
+            electron3.position.y = Math.sin(5*tOffset) * 100;
+            electron3.position.z = Math.cos(5*tOffset) * 100;
+        }
+
+        animate();
     </script>
 
 @endsection
