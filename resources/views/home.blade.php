@@ -112,7 +112,7 @@
                     <br>
                 </div>
             </div>
-            <div class="row">
+            <div class="row text-center centered center-block">
                 <script type="text/javascript" src="https://c.hitchhq.net/-/js/widget.js" api="sciapi" theme="blue"></script>
             </div>
             <div class="row">
