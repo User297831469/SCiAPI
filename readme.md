@@ -13,8 +13,9 @@ For example:
   "status": "success"
   "message": "successfully requested function Thermal Conductivity"
   "code": "function thermal_conductivity(area,constant,temperature_difference,thickness){
-      var conductivity = (constant*area*temperature_difference)/thickness;
-      return conductivity;}",
+              var conductivity = (constant*area*temperature_difference)/thickness;
+              return conductivity;
+           }",
   "widget" :"<html>rendered html widget here</html>"
 }  
 ```
