@@ -114,6 +114,7 @@
             </div>
             <div class="row text-center centered center-block">
                 <script type="text/javascript" src="https://c.hitchhq.net/-/js/widget.js" api="sciapi" theme="blue"></script>
+                <br>
             </div>
             <div class="row">
                 <a href="https://github.com/MackEdweise/SCiAPI" class="btn btn-lg btn-social btn-block btn-github" style="width:260px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
