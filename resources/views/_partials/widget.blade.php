@@ -1,7 +1,7 @@
 <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
     <div class="thumbnail">
         <img src="{{ !is_null($widget->image) ? 'http://23.248.66.120:9090/'.$widget->image : 'http://23.248.66.120:9090/half-atom.png'}}" alt="image">
-        <div class="caption">
+        <div style="height:350px;" class="caption">
             <div class="row text-center">
                 <h3 style="display: inline; color: #363636;">{{ $widget->name }}</h3><a class="my-tool-tip-{{ $widget->id }}" style="display: inline; color: #7c7c7c; margin-left: 10px;" data-toggle="tooltip" data-placement="top" title="You don't have permission to edit this widget. Think something is missing or could be done better? Sign up for SCiAPI to contribute!" href="{{ route('home') }}"><i class="fa fa-pencil-square fa-fw"></i></a>
             </div>
