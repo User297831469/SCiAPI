@@ -84,8 +84,6 @@
                 </div>
             </div>
             <div class="row text-center centered center-block">
-                <script type="text/javascript" src="https://c.hitchhq.net/-/js/widget.js" api="sciapi" theme="blue"></script>
-                <br>
                 @if (!is_null($user))
                     <h4>Your API Key is:</h4>
                     <div class="input-group api-key-group">
@@ -113,6 +111,9 @@
                     </p>
                     <br>
                 </div>
+            </div>
+            <div class="row">
+                <script type="text/javascript" src="https://c.hitchhq.net/-/js/widget.js" api="sciapi" theme="blue"></script>
             </div>
             <div class="row">
                 <a href="https://github.com/MackEdweise/SCiAPI" class="btn btn-lg btn-social btn-block btn-github" style="width:260px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
