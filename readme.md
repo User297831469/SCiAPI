@@ -1,20 +1,23 @@
 
 ## About SCiAPI
 
-This is an ongoing project. The goal is to create an open-source API for embedding scientific computations into web applications with ease.
+This is an ongoing project. The goal is to create an open-source API for embedding scientific computations into web applications with ease. The full documentation can be found on Hitch at https://www.hitchhq.com/sciapi or on Swaggerhub at https://app.swaggerhub.com/apis/MackEdweise/SCiAPI/1.0.0.
 
-## Request Format
+## Response Format
 
-A request to the API returns a JSON object with two fields. One is the "code" and the other is the "widget". The value of the "code" attribute is the JavaScript code that performs the requested operation. The code will be populated with any parameters provided with the request. The "widget" attribute has a rendered html widget containing the formula in text, JavaScript code, an associated Wolfram Alpha widget and a related photograph.
+A successful request to the API returns a JSON object with four attributes. The first two are the "status" and "message". The "status" attribute gives the status of the request. The message provides feedback from the API. The others are the "code" and "widget". The value of the "code" attribute is the JavaScript code that performs the requested operation. The code will be populated with any parameters provided with the request. The "widget" attribute has a rendered html widget containing the formula in text, JavaScript code, an associated Wolfram Alpha widget and a related photograph.
 
 For example:
-
+```
 {
+  "status": "success"
+  "message": "successfully requested function Thermal Conductivity"
   "code": "function thermal_conductivity(area,constant,temperature_difference,thickness){
       var conductivity = (constant*area*temperature_difference)/thickness;
       return conductivity;}",
-  "widget" :"\<html>rendered widget view here\</html>"
+  "widget" :"<html>rendered html widget here</html>"
 }  
+```
 
 ## Contributing
 
