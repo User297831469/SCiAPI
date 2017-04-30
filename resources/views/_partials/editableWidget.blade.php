@@ -13,7 +13,7 @@
                 @endif
             </ul>
 
-            <div class="tab-content text-center">
+            <div style="overflow-y:scroll;height:260px;" class="tab-content text-center">
                 <div id="home-{{ $widget->id }}" class="tab-pane fade in active">
                     <img class="formula" src="{{ 'http://23.248.66.120:9090/'.$widget->formula }}" alt="">
                     <br>
