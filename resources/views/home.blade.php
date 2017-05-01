@@ -301,7 +301,7 @@
         electron3.position.set(0,0,150);
 
         var renderer = new THREE.WebGLRenderer();
-        renderer.setSize(200, 200);
+        renderer.setSize(400, 400);
 
         $('#spin').append(renderer.domElement);
 
