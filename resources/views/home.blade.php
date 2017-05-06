@@ -107,7 +107,7 @@
                     <p>
                         This is an ongoing project, and anyone can participate! If you'd like to learn about Laravel, PHP, JavaScript, APIs or science
                         check out the GitHub repository. If you would like to participate but aren't interested in coding, and know your stuff in a field of
-                        science or mathematics, you can add computations to the api right here on the site.
+                        science or mathematics, you can add computations to the API right here on the site.
                     </p>
                     <br>
                 </div>
