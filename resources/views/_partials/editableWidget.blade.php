@@ -1,23 +1,23 @@
 <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
     <div class="thumbnail">
         <div style="height:160px;width:inherit;overflow-y:hidden;">
-            <img style="max-width: 100%" src="{{ !is_null($widget->image) ? 'http://23.248.66.120:9090/'.$widget->image : 'http://23.248.66.120:9090/half-atom.png'}}" alt="image">
+            <img style="max-width: 100%" src="{{ !is_null($widget->image) ? 'http://23.248.66.120/SCiAPI/'.$widget->image : 'http://23.248.66.120/SCiAPI/half-atom.png'}}" alt="image">
         </div>
         <div style="height:350px;" class="caption">
             <div class="row text-center">
                 <h3 style="display: inline; color: #363636;">{{ $widget->name }}</h3><a class="my-tool-tip-{{ $widget->id }}" style="display: inline; color: #7c7c7c; margin-left: 10px;" data-target="#updateModal-{{ $widget->id }}" data-toggle="modal"><i class="fa fa-pencil-square fa-fw"></i></a>
             </div>
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img style="width: 30px;" src="http://23.248.66.120:9090/atom-icon.png" alt="f(x)"></a></li>
-                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img style="width: 30px;" src="http://23.248.66.120:9090/logo-JavaScript.png" alt="JS"></a></li>
+                <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img style="width: 30px;" src="http://23.248.66.120/SCiAPI/atom-icon.png" alt="f(x)"></a></li>
+                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img style="width: 30px;" src="http://23.248.66.120/SCiAPI/logo-JavaScript.png" alt="JS"></a></li>
                 @if(!is_null($widget->wolfram))
-                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://23.248.66.120:9090/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
+                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://23.248.66.120/SCiAPI/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
                 @endif
             </ul>
 
             <div style="overflow-y:scroll;height:260px;" class="tab-content text-center">
                 <div id="home-{{ $widget->id }}" class="tab-pane fade in active">
-                    <img class="formula" src="{{ 'http://23.248.66.120:9090/'.$widget->formula }}" alt="">
+                    <img class="formula" src="{{ 'http://23.248.66.120/SCiAPI/'.$widget->formula }}" alt="">
                     <br>
                     <div class="text-left">
                         <p>
