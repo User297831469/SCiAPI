@@ -55,7 +55,7 @@ class WidgetController
         $mime = '.'.$formula->getClientOriginalExtension(); // get image extension
         $formulaName = 'widget-'.$widget->id.'-formula'.$mime; // create new name, for recall later
 
-        SSH::into('Blue')->put($formula->getRealPath(), '/home/SCiAPI/'.$formulaName); // store image on file server
+        SSH::into('Blue')->put($formula->getRealPath(), '/home/nginx-1.12.0/html/SCiAPI/'.$formulaName); // store image on file server
 
         $widget->formula = $formulaName; // store image name in db
 
@@ -70,7 +70,7 @@ class WidgetController
             $mime = '.' . $image->getClientOriginalExtension(); // get image extension
             $imageName = 'widget-' . $widget->id . '-image' . $mime; // create new name, for recall later
 
-            SSH::into('Blue')->put($image->getRealPath(), '/home/SCiAPI/' . $imageName); // store image on file server
+            SSH::into('Blue')->put($image->getRealPath(), '/home/nginx-1.12.0/html/SCiAPI/' . $imageName); // store image on file server
 
             $widget->image = $imageName; // store image name in db
         }
@@ -114,7 +114,7 @@ class WidgetController
             $mime = '.' . $formula->getClientOriginalExtension(); // get image extension
             $formulaName = 'widget-' . $widget->id . '-formula' . $mime; // create new name, for recall later
 
-            SSH::into('Blue')->put($formula->getRealPath(), '/home/SCiAPI/' . $formulaName); // store image on file server
+            SSH::into('Blue')->put($formula->getRealPath(), '/home/nginx-1.12.0/html/SCiAPI/' . $formulaName); // store image on file server
 
             $widget->formula = $formulaName; // store image name in db
         }
@@ -130,7 +130,7 @@ class WidgetController
             $mime = '.' . $image->getClientOriginalExtension(); // get image extension
             $imageName = 'widget-' . $widget->id . '-image' . $mime; // create new name, for recall later
 
-            SSH::into('Blue')->put($image->getRealPath(), '/home/SCiAPI/' . $imageName); // store image on file server
+            SSH::into('Blue')->put($image->getRealPath(), '/home/nginx-1.12.0/html/SCiAPI/' . $imageName); // store image on file server
 
             $widget->image = $imageName; // store image name in db
         }
