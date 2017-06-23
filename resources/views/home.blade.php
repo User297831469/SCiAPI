@@ -122,7 +122,7 @@
                 </a>
             </div>
             <div class="row">
-                <a href="https://sciapi-slack.herokuapp.com" class="btn btn-lg btn-social btn-block btn-slack slack" style="width:260px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
+                <a href="https://sciapi-slack.herokuapp.com" class="btn btn-lg btn-social btn-block btn-slack slack" style="color:white;width:260px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
                     <span class="fa fa-slack"></span> Join the Slack
                 </a>
             </div>
