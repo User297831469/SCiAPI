@@ -4,6 +4,17 @@
     margin-top: 50px;
 }
 
+.slack {
+    background-color: #444444;
+    transition: background-color 0.5s ease-in-out;
+    color: white;
+}
+
+.slack:hover {
+    background-color: #222222;
+
+}
+
 .spacer-2{
     margin-top: 100px;
     width: 400px;
