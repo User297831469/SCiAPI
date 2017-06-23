@@ -121,6 +121,11 @@
                     <span class="fa fa-github"></span> Fork the Code
                 </a>
             </div>
+            <div class="row">
+                <a href="https://sciapi-slack.herokuapp.com" class="btn btn-lg btn-social btn-block btn-slack" style="width:260px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
+                    <span class="fa fa-slack"></span> Join the Slack
+                </a>
+            </div>
             <div class="row text-center">
                 @if (!is_null($user))
                     <a class="btn btn-lg btn-success" style="width:260px;" data-target="#createModal" data-toggle="modal">Add a Computation Module</a>
