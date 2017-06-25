@@ -9,7 +9,7 @@
                 <div class="col-sm-7 col-xs-12 col-md-7 col-lg-7">
                     <div class="header-content">
                         <div>
-                            <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
+                            <div class="header-content-inner text-left col-sm-offset-1 col-md-offset-2 col-lg-offset-4">
                                 <h1 class="title">SciAPI</h1>
                                 <br>
                                 <text class="title">A Scientific Computational Application Programming Interface</text>
