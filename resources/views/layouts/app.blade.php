@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>SCiAPI</title>
+        <title>SciAPI</title>
 
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
