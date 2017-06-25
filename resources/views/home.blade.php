@@ -19,22 +19,22 @@
                             <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
                                 <div class="row">
                                     <div class="title-sub">
-                                        <h1 class="title">Sci</h1><text class="title">entific</text>
+                                        <h1 class="title">Scientific</h1>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="title-sub">
-                                        <h1 class="title">A</h1><text class="title">pplication</text>
+                                        <h1 class="title">Application</h1>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="title-sub">
-                                        <h1 class="title">P</h1><text class="title">rogramming</text>
+                                        <h1 class="title">Programming</h1>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="title-sub">
-                                        <h1 class="title">I</h1><text class="title">nterface</text>
+                                        <h1 class="title">Interface</h1>
                                     </div>
                                 </div>
                             </div>
