@@ -11,6 +11,7 @@
                         <div class="hidden-xs">
                             <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
                                 <h1 class="title">SciAPI</h1>
+                                <br>
                                 <text>A Scientific Computational Application Programming Interface</text>
                             </div>
                         </div>
@@ -18,7 +19,7 @@
                             <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
                                 <div class="row">
                                     <div class="title-sub">
-                                        <h1 class="title">S</h1><text class="title">cientific</text>
+                                        <h1 class="title">Sci</h1><text class="title">entific</text>
                                     </div>
                                 </div>
                                 <div class="row">
