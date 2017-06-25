@@ -19,22 +19,37 @@
                             <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
                                 <div class="row">
                                     <div class="title-sub">
-                                        <h1 class="title">Scientific</h1>
+                                        <h1 class="title">SciAPI</h1>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="title-sub">
-                                        <h1 class="title">Application</h1>
+                                        <text class="title">A scientific</text>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="title-sub">
-                                        <h1 class="title">Programming</h1>
+                                        <text class="title">computational</text>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="title-sub">
-                                        <h1 class="title">Interface</h1>
+                                        <text class="title">application</text>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="title-sub">
+                                        <text class="title">programming</text>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="title-sub">
+                                        <text class="title">interface</text>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="title-sub">
+                                        <text class="title">For The Web</text>
                                     </div>
                                 </div>
                             </div>
