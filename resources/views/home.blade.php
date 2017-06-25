@@ -8,50 +8,11 @@
             <div class="row">
                 <div class="col-sm-7 col-xs-12 col-md-7 col-lg-7">
                     <div class="header-content">
-                        <div class="hidden-xs">
+                        <div>
                             <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
                                 <h1 class="title">SciAPI</h1>
                                 <br>
                                 <text class="title">A Scientific Computational Application Programming Interface</text>
-                            </div>
-                        </div>
-                        <div class="hidden-md hidden-lg hidden-sm">
-                            <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
-                                <div class="row">
-                                    <div class="title-sub">
-                                        <h1 class="title">SciAPI</h1>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="title-sub">
-                                        <text class="title">A scientific</text>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="title-sub">
-                                        <text class="title">computational</text>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="title-sub">
-                                        <text class="title">application</text>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="title-sub">
-                                        <text class="title">programming</text>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="title-sub">
-                                        <text class="title">interface</text>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="title-sub">
-                                        <text class="title">For The Web</text>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
