@@ -10,7 +10,8 @@
                     <div class="header-content">
                         <div class="hidden-xs">
                             <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
-                                <h1 class="title">S</h1><text class="title">cientific</text> <h1 class="title">C</h1><text class="title">omputat</text><h1 class="title">i</h1><text class="title">onal</text> <h1 class="title">A</h1><text class="title">pplication</text> <h1 class="title">P</h1><text class="title">rogramming</text> <h1 class="title">I</h1><text class="title">nterface</text>
+                                <h1 class="title">SciAPI</h1>
+                                <text>A Scientific Computational Application Programming Interface</text>
                             </div>
                         </div>
                         <div class="hidden-md hidden-lg hidden-sm">
@@ -18,11 +19,6 @@
                                 <div class="row">
                                     <div class="title-sub">
                                         <h1 class="title">S</h1><text class="title">cientific</text>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="title-sub">
-                                        <h1 class="title">C</h1><text class="title">omputat</text><h1 class="title">i</h1><text class="title">onal</text>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -117,7 +113,7 @@
                 <br>
             </div>
             <div class="row">
-                <a href="https://github.com/MackEdweise/SCiAPI" class="btn btn-lg btn-social btn-block btn-github" style="width:260px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
+                <a href="https://github.com/MackEdweise/SciAPI" class="btn btn-lg btn-social btn-block btn-github" style="width:260px;margin-left:auto;margin-right:auto;margin-bottom:25px;">
                     <span class="fa fa-github"></span> Fork the Code
                 </a>
             </div>
