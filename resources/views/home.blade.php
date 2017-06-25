@@ -12,7 +12,7 @@
                             <div class="header-content-inner text-left col-md-offset-2 col-lg-offset-4">
                                 <h1 class="title">SciAPI</h1>
                                 <br>
-                                <text>A Scientific Computational Application Programming Interface</text>
+                                <text class="title">A Scientific Computational Application Programming Interface</text>
                             </div>
                         </div>
                         <div class="hidden-md hidden-lg hidden-sm">
