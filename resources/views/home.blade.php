@@ -79,8 +79,8 @@
                 <!-- Jumbotron -->
                 <div class="jumbotron">
                     <p>
-                        The computations are accessible through a dynamic library that extends jQuery with all of the functions in the
-                        SciAPI knowledge base. Download the <small><code>sciapilib.js</code></small> and include it in your application! Replace
+                        The computations are accessible through a dynamic JavaScript library of all the functions in the SciAPI knowledge base.
+                        Download the <small><code>sciapilib.js</code></small> and include it in your application! Replace
                         <small><code>var API_KEY = "123456789abcdefghijklmnopqrstuvwxyz";</code></small> in the file to activate the dynamic library.
                     </p>
                     <br>
