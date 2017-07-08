@@ -67,6 +67,9 @@
                                 <a href="#api">API</a>
                             </li>
                             <li>
+                                <a href="#library">Library</a>
+                            </li>
+                            <li>
                                 <a href="#contribute">Contribute</a>
                             </li>
                             <li>

@@ -38,7 +38,7 @@
                     <br>
                     <pre class="code-example">
 <span>// Requesting a calculation using a function name and parameter footprint.</span>
-<span>$.post('https://sciapi.herokuapp.com/request/Force_Between_Charges)',</span>
+<span>$.post('https://sciapi.herokuapp.com/request/Force_Between_Charges',</span>
 <span>    {</span>
 <span>          charge1: -1.60 * 10 ** -19,       // Optional parameter values.</span>
 <span>          charge2: 1.60 * 10 ** -19,        // Without parameters, we will give you the code to perform the operation.</span>
@@ -67,6 +67,47 @@
                     </div>
                 @else
                     <a class="btn btn-lg btn-success" href="{{ route('register') }}">Get an API Key</a>
+                @endif
+            </div>
+            <div class="row">
+                <hr>
+            </div>
+        </div>
+
+        <div id="library">
+            <div class="row">
+                <!-- Jumbotron -->
+                <div class="jumbotron">
+                    <p>
+                        The computations are accessible through a dynamic library that extends jQuery with all of the functions in the
+                        SCiAPI knowledge base. Download the <code>sciapilib.js</code> and include it in your application! Replace
+                        <code>var API_KEY = "123456789abcdefghijklmnopqrstuvwxyz";</code> in the file to activate the dynamic library.
+                    </p>
+                    <br>
+                    <p>Dynamic library usage example:</p>
+                    <br>
+                    <pre class="code-example">
+<span>// Computations can be chained to the jQuery function.</span>
+<span>var velocity = 5;</span>
+<span>var acceleration = 10;</span>
+<span>var momentOfInertia = 15;</span>
+<span>var power = $.Angular_Power($.Net_Torque(momentOfInertia, angularAcceleration), angularVelocity);</span>
+                    </pre>
+                </div>
+            </div>
+            <div class="row text-center centered center-block">
+                @if (!is_null($user))
+                    <h4>Download</h4>
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <div class="row">
+                            <a href="{{ URL::asset('js/sciapilib.js') }}" class="glyphicon glyphicon-file"></a>
+                        </div>
+                        <div class="row filename">
+                            sciapilib.js
+                        </div>
+                    </div>
+                @else
+                    <a class="btn btn-lg btn-success" href="{{ route('register') }}">Register to download</a>
                 @endif
             </div>
             <div class="row">

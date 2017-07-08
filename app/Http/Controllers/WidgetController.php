@@ -95,7 +95,7 @@ class WidgetController
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return Redirect::route('home')->withErrors($validator); // return main view with erros
+            return Redirect::route('home')->withErrors($validator); // return main view with errors
         }
 
         $user = Auth::user(); // get user
@@ -248,10 +248,51 @@ class WidgetController
                     'widget' => 'not found',
                     'status' => 'fail',
                     'message' => 'could not find a function with the name ' . $name
-                ],401);
+                ],404);
             }
         }
 
+        else { // no API key supplied
+
+            return response()->json([
+                'code' => 'API key error',
+                'widget' => 'API key error',
+                'status' => 'fail',
+                'message' => 'No API key was supplied. Please sign up for a key.'
+            ],400);
+        }
+    }
+
+    public function listAll(Request $request){
+
+        if(!is_null($request->input('_api_key'))) { // an API key was supplied
+
+            $user = User::where('key', '=', $request->input('_api_key'))->first(); // get the corresponding user
+
+            if (is_null($user)) { // no user was found
+
+                return response()->json([
+                    'code' => 'API key error',
+                    'widget' => 'API key error',
+                    'status' => 'fail',
+                    'message' => 'the supplied API key was not valid.'
+                ], 400);
+            }
+
+            $widgets = Widgets::all(); // get all widgets
+            $widgetInfo = []; // code building data structure
+
+            foreach ($widgets as $widget) {
+                $widgetInfo[$widget->name] = $widget->code; // function code indexed by function names
+            }
+
+            return response()->json([
+                'code' => json_encode($widgetInfo),
+                'widget' => 'all',
+                'status' => 'success',
+                'message' => 'successfully requested list of all functions.'
+            ], 200);
+        }
         else { // no API key supplied
 
             return response()->json([
