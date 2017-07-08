@@ -100,7 +100,7 @@
                     <h4>Download</h4>
                     <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3 col-lg-2 col-lg-offset-5">
                         <div class="row">
-                            <a href="{{ URL::asset('js/sciapilib.js') }}" class="glyphicon glyphicon-file"></a>
+                            <a href="{{ URL::asset('js/sciapilib.js') }}" class="glyphicon glyphicon-file" download></a>
                         </div>
                         <div class="row filename">
                             sciapilib.js
