@@ -9,22 +9,19 @@ $.post('https://sciapi.herokuapp.com/request/list',
         var status = data.status;                       // The status of the request.
         if(status == 'success'){
             var code = data.code;                       // The JavaScript code that performs each operation.
-            var definitions = "jQuery.fn.extend({";
+            var definitions = "";
             var count = 0;
-            for (var name in code){                     // Dynamically extends jQuery with functions based on the computations in the SciAPI database.
+            for (var name in code){                     // Dynamically defines functions based on the computations in the SciAPI database.
                 if(code.hasOwnProperty(name)){
                     var params = code[name].split("(")[1].split(")")[0];
-
-                    definitions +=   name + ": function(" + params + ") {" +
-                                     "return this.each(function(" + params + ") {" +
-                                     code[name].split('{')[1].split('}')[0] + "});},";
+                    console.log("function " + name + " has params: " + params);
+                    definitions += code[name];
                 count += 1;
                 }
             }
-            definitions += "});";
-            eval(definitions);                          // Evaluates dynamic jQuery extensions.
+            eval(definitions);                          // Evaluates dynamic function definitions.
 
-            console.log("Extended jQuery with " + count + "functions!");
+            console.log("Defined " + count + "functions!");
         }
         else{
 

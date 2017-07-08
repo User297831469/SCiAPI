@@ -87,11 +87,10 @@
                     <p>Dynamic library usage example:</p>
                     <br>
                     <pre class="code-example">
-<span>// Computations can be chained to the jQuery function.</span>
 <span>var velocity = 5;</span>
 <span>var acceleration = 10;</span>
 <span>var momentOfInertia = 15;</span>
-<span>var power = $.Angular_Power($.Net_Torque(momentOfInertia, angularAcceleration), angularVelocity);</span>
+<span>var power = angularPower(netTorque(momentOfInertia, angularAcceleration), angularVelocity);</span>
                     </pre>
                 </div>
             </div>
