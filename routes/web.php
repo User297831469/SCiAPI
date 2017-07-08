@@ -24,7 +24,7 @@ Route::post('/update/{id}', 'WidgetController@update')->name('update');
 //API
 
 Route::post('/request/{function_name}', 'WidgetController@reply')->name('request')->middleware('cors');
-Route::post('/request/list', 'WidgetController@listAll')->name('list')->middleware('cors');
+Route::post('/list', 'WidgetController@listAll')->name('list')->middleware('cors');
 
 //auth
 

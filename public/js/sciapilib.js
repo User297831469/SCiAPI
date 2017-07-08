@@ -1,6 +1,6 @@
 var API_KEY = "123456789abcdefghijklmnopqrstuvwxyz";    // Get an API key by signing up for free!
 
-$.post('https://sciapi.herokuapp.com/request/list',
+$.post('https://sciapi.herokuapp.com/list',
     {
         _api_key: API_KEY
     })
