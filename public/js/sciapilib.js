@@ -11,7 +11,7 @@ $.post('https://sciapi.herokuapp.com/request/list',
             var code = data.code;                       // The JavaScript code that performs each operation.
             var definitions = "jQuery.fn.extend({";
             var count = 0;
-            for (var name in code){                     // Dynamically extends jQuery with functions based on the computations in the SCiAPI database.
+            for (var name in code){                     // Dynamically extends jQuery with functions based on the computations in the SciAPI database.
                 if(code.hasOwnProperty(name)){
                     var params = code[name].split("(")[1].split(")")[0];
 
