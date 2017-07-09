@@ -1,5 +1,23 @@
 var API_KEY = "123456789abcdefghijklmnopqrstuvwxyz";    // Get an API key by signing up for free!
 
+var sciapi = {};
+
+function defineFunctions(definitions){
+    var count = 0;
+    for(var name in definitions) {
+        if(definitions.hasOwnProperty(name)) {
+            var params = definitions[name].split("(")[1].split(")")[0];
+            var title = definitions[name].split("(")[0].split(" ");
+            title = title[title.length - 1];
+            console.log(title + " function has params: " + params);
+            var func = new Function("return " + definitions[name].replace(/[\n\r]+/g, ' '))();
+            sciapi[title] = func;
+            count += 1;
+        }
+    }
+    console.log("Defined " + count + " functions!");
+}
+
 $.post('https://sciapi.herokuapp.com/list',
     {
         _api_key: API_KEY
@@ -8,24 +26,10 @@ $.post('https://sciapi.herokuapp.com/list',
 
         var status = data.status;                       // The status of the request.
         if(status == 'success'){
-            var code = data.code;                       // The JavaScript code that performs each operation.
-            var definitions = "";
-            var count = 0;
-            for (var name in code){                     // Dynamically defines functions based on the computations in the SciAPI database.
-                if(code.hasOwnProperty(name)){
-                    var params = code[name].split("(")[1].split(")")[0];
-                    console.log("function " + name + " has params: " + params);
-                    definitions += code[name];
-                count += 1;
-                }
-            }
-            eval(definitions);                          // Evaluates dynamic function definitions.
-
-            console.log("Defined " + count + "functions!");
+            var code = JSON.parse(data.code);           // The JavaScript code that performs each operation.
+            defineFunctions(code);                      // Evaluates dynamic function definitions.
         }
         else{
-
             console.log("An API error occurred: " + data.message);
         }
-});
-
+    });
