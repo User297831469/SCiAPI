@@ -2,7 +2,7 @@ var API_KEY = "123456789abcdefghijklmnopqrstuvwxyz";    // Get an API key by sig
 
 var sciapi = {};
 
-function defineFunctions(definitions){
+function defineFunctions(definitions){                  // Creates dynamic function definitions.
     var count = 0;
     for(var name in definitions) {
         if(definitions.hasOwnProperty(name)) {
@@ -27,7 +27,7 @@ $.post('https://sciapi.herokuapp.com/list',
         var status = data.status;                       // The status of the request.
         if(status == 'success'){
             var code = JSON.parse(data.code);           // The JavaScript code that performs each operation.
-            defineFunctions(code);                      // Evaluates dynamic function definitions.
+            defineFunctions(code);
         }
         else{
             console.log("An API error occurred: " + data.message);

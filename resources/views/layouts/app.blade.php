@@ -75,6 +75,9 @@
                             <li>
                                 <a href="#widgets">Widgets</a>
                             </li>
+                            <li>
+                                <a href="https://app.swaggerhub.com/apis/MackEdweise/SCiAPI/1.0.1">Docs</a>
+                            </li>
                             @if(is_null($user))
                                 <li>
                                     <a href="{{ route('login') }}">Login</a>

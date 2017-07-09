@@ -273,7 +273,6 @@ class WidgetController
 
                 return response()->json([
                     'code' => 'API key error',
-                    'widget' => 'API key error',
                     'status' => 'fail',
                     'message' => 'the supplied API key was not valid.'
                 ], 400);
@@ -288,7 +287,6 @@ class WidgetController
 
             return response()->json([
                 'code' => json_encode($widgetInfo),
-                'widget' => 'all',
                 'status' => 'success',
                 'message' => 'successfully requested list of all functions.'
             ], 200);
@@ -297,7 +295,6 @@ class WidgetController
 
             return response()->json([
                 'code' => 'API key error',
-                'widget' => 'API key error',
                 'status' => 'fail',
                 'message' => 'No API key was supplied. Please sign up for a key.'
             ],400);
