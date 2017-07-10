@@ -105,7 +105,7 @@
                         </div>
                     </div>
                 @else
-                    <a class="btn btn-lg btn-success" href="{{ route('register') }}">Register to download</a>
+                    <a class="btn btn-lg btn-success" href="{{ route('register') }}">Register to Download</a>
                 @endif
             </div>
             <div class="row">
