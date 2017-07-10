@@ -87,8 +87,8 @@
                     <p>Dynamic library usage example:</p>
                     <br>
                     <pre class="code-example">
-<span>var velocity = 5; // Keep track of your own units.</span>
-<span>var acceleration = 10;</span>
+<span>var angularVelocity = 5; // Keep track of your own units.</span>
+<span>var angularAcceleration = 10;</span>
 <span>var momentOfInertia = 15;</span>
 <span>var power = sciapi.angularPower(sciapi.netTorque(momentOfInertia, angularAcceleration), angularVelocity);</span>
                     </pre>
