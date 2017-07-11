@@ -1,7 +1,7 @@
 
 ## About SciAPI
 
-This is an ongoing project. The goal is to create an open-source API for embedding scientific computations into web applications with ease. The full documentation can be found on Hitch at https://www.hitchhq.com/sciapi or on Swaggerhub at https://app.swaggerhub.com/apis/MackEdweise/SCiAPI/1.0.1.
+This is an ongoing project. The goal is to create an open-source API for embedding scientific computations into web applications with ease. The full documentation can be found on Hitch (https://www.hitchhq.com/sciapi) or on Swaggerhub (https://app.swaggerhub.com/apis/MackEdweise/SCiAPI/1.0.1).
 
 ## Response Format
 
@@ -22,14 +22,14 @@ For example:
 
 ## Contributing
 
-I hope that people will contribute and learn something through this project, whether it be programming, mathematics or science related. If you are interested in contributing, feel free to modify the code and make pull requests. I will review requests to do so. Also, on the website sciapi.herokuapp.com, you can add computation modules to the API using a form.
+I hope that people will contribute and learn something through this project, whether it be programming, mathematics or science related. If you are interested in contributing, feel free to modify the code and make pull requests. I will review requests to do so. Also, on the website http://sciapi.herokuapp.com, you can add computation modules to the API using an interactive UI.
 
 ## License
 
 This API is open source. I encourage you to use it or its components in your own projects... or better yet, contribute to SciAPI! 
 The API interacts with Wolfram Alpha's widget builder (http://developer.wolframalpha.com/widgetbuilder/), and math.js by Jos de Jong (http://mathjs.org/index.html).
 
-Copyright [2017] [Marcus Edwards]
+Copyright 2017 Marcus Edwards
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

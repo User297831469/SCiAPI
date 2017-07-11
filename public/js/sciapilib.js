@@ -2,6 +2,10 @@ var API_KEY = "123456789abcdefghijklmnopqrstuvwxyz";    // Get an API key by sig
 
 var sciapi = {};
 
+var mathjs = document.createElement('script');          // Imports math.js
+mathjs.src = "http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.14.2/math.min.js";
+document.head.appendChild(mathjs);
+
 function defineFunctions(definitions){                  // Creates dynamic function definitions.
     var count = 0;
     for(var name in definitions) {
