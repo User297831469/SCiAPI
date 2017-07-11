@@ -26,4 +26,19 @@ I hope that people will contribute and learn something through this project, whe
 
 ## License
 
-This API is open source. I encourage you to use it or its components in your own projects... or better yet, contribute to SCiAPI! The API interacts with Wolfram Alpha's widget builder, which belongs fully to Wolfram Alpha. I do not claim any ownership or rights regarding Wolfram Alpha's code. However I think that they provide an awesome platform and you should check it out!
+This API is open source. I encourage you to use it or its components in your own projects... or better yet, contribute to SCiAPI! 
+The API interacts with Wolfram Alpha's widget builder (http://developer.wolframalpha.com/widgetbuilder/), and math.js by Jos de Jong (http://mathjs.org/index.html).
+
+Copyright [2017] [Marcus Edwards]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
