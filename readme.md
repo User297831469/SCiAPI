@@ -22,7 +22,7 @@ For example:
 
 ## Contributing
 
-I hope that people will contribute and learn something through this project, whether it be programming, mathematics or science related. If you are interested in contributing, feel free to modify the code and make pull requests. I will review requests to do so. Also, on the website http://sciapi.herokuapp.com, you can add computation modules to the API using an interactive UI.
+I hope that people will contribute and learn something through this project, whether it be programming, mathematics or science related. If you are interested in contributing, feel free to modify the code and make pull requests. I will review requests to do so. Also, on the website http://www.sciapi.ca, you can add computation modules to the API using an interactive UI.
 
 ## License
 
