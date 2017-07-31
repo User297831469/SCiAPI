@@ -40,10 +40,10 @@
 <span>// Requesting a calculation using a function name and parameter footprint.</span>
 <span>$.post('https://sciapi.herokuapp.com/request/Force_Between_Charges',</span>
 <span>    {</span>
-<span>          charge1: -1.60 * 10 ** -19,       // Optional parameter values.</span>
-<span>          charge2: 1.60 * 10 ** -19,        // Without parameters, we will give you the code to perform the operation.</span>
-<span>          permeability: 8.85 * 10 ** -12,   // With parameters, we will also insert the parameters into the code.</span>
-<span>          _api_key: api-key                 // Get an API key by signing up for free!</span>
+<span>          q_one: -1.60 * 10 ** -19,       // Optional parameter values.</span>
+<span>          q_two: 1.60 * 10 ** -19,        // Without parameters, we will give you the code to perform the operation.</span>
+<span>          r: 8.5 * 10 ** 6,               // With parameters, we will also insert the parameters into the code.</span>
+<span>          _api_key: api-key               // Get an API key by signing up for free!</span>
 <span>    })</span>
 <span>    .done(function(data){</span>
 <span>          var code = data.code;       // The JavaScript code that performs the operation.</span>
