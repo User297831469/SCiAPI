@@ -42,7 +42,7 @@
 <span>    {</span>
 <span>          q_one: -1.60 * 10 ** -19,       // Optional parameter values.</span>
 <span>          q_two: 1.60 * 10 ** -19,        // Without parameters, we will give you the code to perform the operation.</span>
-<span>          r: 8.5 * 10 ** 6,               // With parameters, we will also insert the parameters into the code.</span>
+<span>          r: 8.5 * 10 ** -6,              // With parameters, we will also insert the parameters into the code.</span>
 <span>          _api_key: api-key               // Get an API key by signing up for free!</span>
 <span>    })</span>
 <span>    .done(function(data){</span>
@@ -194,7 +194,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; <a href="http://www.hardboot.co">HardBoot</a> 2017</p>
+                    <p><a href="http://www.sigmadev.ca">SIGMA Development</a> 2017</p>
                 </div>
             </div>
         </footer>

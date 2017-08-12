@@ -36,7 +36,7 @@
         <link href="css/font-awesome.css" rel="stylesheet">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="img/path4200.png">
+        <link rel="shortcut icon" href="{{ URL::asset('img/atom.png') }}">
 
         <!-- Bootstrap  Social Icons -->
         <link href="css/bootstrap-social.css" rel="stylesheet" >

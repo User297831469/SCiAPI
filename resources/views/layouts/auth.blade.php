@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SCiAPI</title>
+    <title>SciAPI</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
     <link href="css/font-awesome.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/path4200.png">
+    <link rel="shortcut icon" href="{{ URL::asset('img/atom.png') }}">
 
     <!-- Bootstrap  Social Icons -->
     <link href="css/bootstrap-social.css" rel="stylesheet" >
@@ -52,7 +52,7 @@
                         </button>
 
                         <!-- Branding Image -->
-                        <a class="navbar-brand" href="{{ url('/') }}">SCiAPI</a>
+                        <a class="navbar-brand" href="{{ url('/') }}">SciAPI</a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="app-navbar-collapse">
