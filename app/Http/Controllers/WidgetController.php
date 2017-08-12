@@ -209,9 +209,9 @@ class WidgetController
                                     $firstLine = $left . $right;
                                 }
                             }
-
+                            $pattern = "/(?<!(\w))".$input."(?!(\w))/"; // find instances of the variable that are not parts of other words
                             $firstLine = str_replace($input, "", $firstLine); // remove the parameter from the function footprint
-                            $body = str_replace($input, $val, $body); // replace instances of the variable in the function body with the provided value
+                            $body = preg_replace($pattern, $val, $body); // replace instances of the variable in the function body with the provided value
 
                         } else { // a parameter could not be found
 
