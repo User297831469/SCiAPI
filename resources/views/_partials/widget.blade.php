@@ -49,7 +49,7 @@
     $(".my-tool-tip-" + "{{ $widget->id }}").tooltip();
     var code = "";
     @foreach(explode("\n", $widget->code) as $line)
-        code += " {{ $line }}";
+            code += " {{ str_replace(array("\n", "\r"), '', $line) }}";
     @endforeach
     var func = new Function("return " + code)();
     var params = code.split("(")[1].split(")")[0].split(",");
