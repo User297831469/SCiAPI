@@ -70,8 +70,8 @@
             for (var param in params) {
                 values.push($('#' + param + '-{{ $widget->id }}').val());
             }
-            var result = func.apply(window, values);
-            alert("The solution to the" + title + " problem is " + result.toString());
+            var result = func.apply(null, values);
+            alert("The solution to the " + title + " problem is " + result.toString());
         });
     };
     {{ str_replace(" ", "_", $widget->name).'Func' }}();
