@@ -48,20 +48,20 @@
 <script>
     $(".my-tool-tip-" + "{{ $widget->id }}").tooltip();
 
-    function {{ $widget->name.'Func' }}() {
+    function {{ str_replace(" ", "_", $widget->name).'Func' }}() {
         var code = "";
         @foreach(explode("\n", $widget->code) as $line)
                 code += " {{ str_replace(array("\n", "\r"), '', $line) }}";
                 @endforeach
         var func = new Function("return " + code)();
         var params = code.split("(")[1].split(")")[0].split(",");
-        var title = code.split("(")[0].split(" ");
+        var title = code.split("(")[0].split(" ")[1];
         for (var param in params) {
             var field = '<div class="row" style="margin-bottom:10px; margin-top:10px; margin-right: auto; margin-left: auto;">' +
-                    '<h4 style="color: #363636;"><b>' + param + '</b></h4>' +
+                    '<h4 style="color: #363636;"><b>' + params[param] + '</b></h4>' +
                     '</div>' +
                     '<div class="row" style="width: 250px; margin-bottom:10px; margin-top:10px; margin-right: auto; margin-left: auto;">' +
-                    '<input required id="' + param + '-{{ $widget->id }}' + '" name="' + param + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
+                    '<input required id="' + params[param] + '-{{ $widget->id }}' + '" name="' + params[param] + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
                     '</div>';
             $('#menu-{{ $widget->id }}-3').prepend(field);
         }
@@ -71,10 +71,10 @@
                 values.push($('#' + param + '-{{ $widget->id }}').val());
             }
             var result = func.apply(window, values);
-            alert("The solution to the" + title + "problem is " + result.toString());
+            alert("The solution to the" + title + " problem is " + result.toString());
         });
     };
-    {{ $widget->name.'Func' }}();
+    {{ str_replace(" ", "_", $widget->name).'Func' }}();
 </script>
 <style>
     #code-{{ $widget->id }} {
