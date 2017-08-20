@@ -47,30 +47,34 @@
 </div>
 <script>
     $(".my-tool-tip-" + "{{ $widget->id }}").tooltip();
-    var code = "";
-    @foreach(explode("\n", $widget->code) as $line)
-            code += " {{ str_replace(array("\n", "\r"), '', $line) }}";
-    @endforeach
-    var func = new Function("return " + code)();
-    var params = code.split("(")[1].split(")")[0].split(",");
-    var title = code.split("(")[0].split(" ");
-    for (var param in params){
-        var field = '<div class="row" style="margin-bottom:10px; margin-top:10px;">' +
+
+    function {{ $widget->name.'Func' }}() {
+        var code = "";
+        @foreach(explode("\n", $widget->code) as $line)
+                code += " {{ str_replace(array("\n", "\r"), '', $line) }}";
+                @endforeach
+        var func = new Function("return " + code)();
+        var params = code.split("(")[1].split(")")[0].split(",");
+        var title = code.split("(")[0].split(" ");
+        for (var param in params) {
+            var field = '<div class="row" style="margin-bottom:10px; margin-top:10px; margin-right: auto; margin-left: auto;">' +
                     '<h4 style="color: #363636;"><b>' + param + '</b></h4>' +
                     '</div>' +
-                    '<div class="row" style="width: 250px; margin-bottom:10px; margin-top:10px;">' +
+                    '<div class="row" style="width: 250px; margin-bottom:10px; margin-top:10px; margin-right: auto; margin-left: auto;">' +
                     '<input required id="' + param + '-{{ $widget->id }}' + '" name="' + param + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
                     '</div>';
-        $('#menu-{{ $widget->id }}-3').prepend(field);
-    }
-    $('#submit-{{ $widget->id }}-btn').on('click', function(){
-        var values = [];
-        for  (var param in params){
-            values.push($('#' + param + '-{{ $widget->id }}').val());
+            $('#menu-{{ $widget->id }}-3').prepend(field);
         }
-        var result = func.apply(window,values);
-        alert("The solution to the" + title + "problem is " + result.toString());
-    });
+        $('#submit-{{ $widget->id }}-btn').on('click', function () {
+            var values = [];
+            for (var param in params) {
+                values.push($('#' + param + '-{{ $widget->id }}').val());
+            }
+            var result = func.apply(window, values);
+            alert("The solution to the" + title + "problem is " + result.toString());
+        });
+    };
+    {{ $widget->name.'Func' }}();
 </script>
 <style>
     #code-{{ $widget->id }} {
