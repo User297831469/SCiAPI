@@ -56,7 +56,7 @@
         var params = code.split("(")[1].split(")")[0].split(",");
         var title = code.split("(")[0].split(" ")[2];
         for (var param in params){
-            var field = '<div class="row" style="margin-bottom:10px; margin-top:10px; margin-right: auto; margin-left: auto;">' +
+            var field = '<div class="row" style="margin-bottom:5px; margin-top:5px; margin-right: auto; margin-left: auto;">' +
                     '<h4 style="color: #363636;"><b>' + params[param].split('_').join(' ') + '</b></h4>' +
                     '</div>' +
                     '<div class="row" style="width: 250px; margin-bottom:5px; margin-top:5px; margin-right: auto; margin-left: auto;">' +
