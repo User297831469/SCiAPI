@@ -10,8 +10,9 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/atom-icon.png" alt="f(x)"></a></li>
                 <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/logo-JavaScript.png" alt="JS"></a></li>
+                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/calc-icon.png" alt="Calc"></a></li>
                 @if(!is_null($widget->wolfram))
-                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
+                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-4"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
                 @endif
             </ul>
 
@@ -32,8 +33,11 @@
                         @endforeach
                     </pre>
                 </div>
+                <div id="menu-{{ $widget->id }}-3" class="tab-pane fade text-left">
+                    <button class="btn btn-success" id="submit-{{ $widget->id }}-btn"></button>
+                </div>
                 @if(!is_null($widget->wolfram))
-                    <div id="menu-{{ $widget->id }}-3" class="tab-pane fade" style="height:250px;">
+                    <div id="menu-{{ $widget->id }}-4" class="tab-pane fade" style="height:250px;">
                         {!! html_entity_decode($widget->wolfram) !!}
                     </div>
                 @endif
@@ -41,6 +45,27 @@
         </div>
     </div>
 </div>
+<script>
+    $(".my-tool-tip-" + "{{ $widget->id }}").tooltip();
+    var code = "{{ $widget->code }}".replace(/[\n\r]+/g, ' ');
+    var func = new Function("return " + code)();
+    var params = code.split("(")[1].split(")")[0].split(",");
+    var title = code.split("(")[0].split(" ");
+    for (var param in params){
+        var field = '<div class="row" style="margin-bottom:10px; margin-top:10px;">' +
+                '<input required id="' + param + '-{{ $widget->id }}' + '" name="' + param + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
+                '</div>';
+        $('#menu-{{ $widget->id }}-3').prepend(field);
+    }
+    $('#submit-{{ $widget->id }}-btn').on('click', function(){
+        var values = [];
+        for  (var param in params){
+            values.push($('#' + param + '-{{ $widget->id }}').val());
+        }
+        var result = func.apply(window,values);
+        alert("The solution to the" + title + "problem is " + result.toString());
+    });
+</script>
 <style>
     #code-{{ $widget->id }} {
         background: #303030;

@@ -10,9 +10,9 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/atom-icon.png" alt="f(x)"></a></li>
                 <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/logo-JavaScript.png" alt="JS"></a></li>
-                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/calc-icon.png" alt="JS"></a></li>
+                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/calc-icon.png" alt="Calc"></a></li>
                 @if(!is_null($widget->wolfram))
-                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
+                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-4"><img style="width: 30px;" src="http://www.datablue.stream/SCiAPI/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
                 @endif
             </ul>
 
