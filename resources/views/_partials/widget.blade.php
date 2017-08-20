@@ -56,6 +56,9 @@
     var title = code.split("(")[0].split(" ");
     for (var param in params){
         var field = '<div class="row" style="margin-bottom:10px; margin-top:10px;">' +
+                    '<h4 style="color: #363636;"><b>' + param + '</b></h4>' +
+                    '</div>' +
+                    '<div class="row" style="width: 250px; margin-bottom:10px; margin-top:10px;">' +
                     '<input required id="' + param + '-{{ $widget->id }}' + '" name="' + param + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
                     '</div>';
         $('#menu-{{ $widget->id }}-3').prepend(field);
