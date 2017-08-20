@@ -47,7 +47,10 @@
 </div>
 <script>
     $(".my-tool-tip-" + "{{ $widget->id }}").tooltip();
-    var code = "{{ $widget->code }}".replace(/[\n\r]+/g, ' ');
+    var code = "";
+    @foreach(explode("\n", $widget->code) as $line)
+        code += " {{ $line }}";
+    @endforeach
     var func = new Function("return " + code)();
     var params = code.split("(")[1].split(")")[0].split(",");
     var title = code.split("(")[0].split(" ");
