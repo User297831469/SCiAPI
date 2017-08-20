@@ -52,7 +52,7 @@
         @foreach(explode("\n", $widget->code) as $line)
             code += " {{ str_replace(array("\n", "\r"), '', $line) }}";
         @endforeach
-        this.func = new Function("return " + code)();
+        var func = new Function("return " + code)();
         var params = code.split("(")[1].split(")")[0].split(",");
         var title = code.split("(")[0].split(" ")[2];
         for (var param in params){
@@ -69,7 +69,7 @@
             for  (var param in params){
                 values.push($('#' + params[param] + '-{{ $widget->id }}').val());
             }
-            var result = this.func.apply(this,values);
+            var result = func.apply(null,values);
             alert("The solution to the " + title + " problem is " + result.toString());
         });
     };

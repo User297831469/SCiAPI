@@ -72,7 +72,7 @@
             }
             console.log(values);
             console.log(func);
-            var result = this.func.apply(null, values);
+            var result = func.apply(null, values);
             alert("The solution to the " + title + " problem is " + result.toString());
         });
     };
