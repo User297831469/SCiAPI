@@ -70,7 +70,7 @@
                 values.push($('#' + params[param] + '-{{ $widget->id }}').val());
             }
             var result = func.apply(null,values);
-            alert("The solution to the " + title + " problem is " + result.toString());
+            alert("The solution to the " + title + " problem is " + result.toFixed(2));
         });
     };
     {{ str_replace(" ", "_", $widget->name).'Func' }}();
