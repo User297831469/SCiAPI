@@ -61,14 +61,14 @@
                     '<h4 style="color: #363636;"><b>' + params[param].split('_').join(' ') + '</b></h4>' +
                     '</div>' +
                     '<div class="row" style="width: 250px; margin-bottom:5px; margin-top:5px; margin-right: auto; margin-left: auto;">' +
-                    '<input required id="' + params[param].split('_').join(' ') + '-{{ $widget->id }}' + '" name="' + params[param].split('_').join(' ') + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
+                    '<input required id="' + params[param] + '-{{ $widget->id }}' + '" name="' + params[param] + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
                     '</div>';
             $('#menu-{{ $widget->id }}-3').prepend(field);
         }
         $('#submit-{{ $widget->id }}-btn').on('click', function () {
             var values = [];
             for (var param in params) {
-                values.push($('#' + param + '-{{ $widget->id }}').val());
+                values.push($('#' + params[param] + '-{{ $widget->id }}').val());
             }
             console.log(values);
             console.log(this.func);
