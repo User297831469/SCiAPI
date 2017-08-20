@@ -34,7 +34,7 @@
                     </pre>
                 </div>
                 <div id="menu-{{ $widget->id }}-3" class="tab-pane fade text-left">
-                    <button class="btn btn-success" id="submit-{{ $widget->id }}-btn"></button>
+                    <button class="btn btn-success" id="submit-{{ $widget->id }}-btn">Calculate</button>
                 </div>
                 @if(!is_null($widget->wolfram))
                     <div id="menu-{{ $widget->id }}-4" class="tab-pane fade" style="height:250px;">
