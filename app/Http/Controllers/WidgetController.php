@@ -36,7 +36,7 @@ class WidgetController
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return Redirect::route('home')->withErrors($validator); // return main view with erros
+            return Redirect::route('home')->withErrors($validator); // return main view with errors
         }
 
         $user = Auth::user(); // get current user
