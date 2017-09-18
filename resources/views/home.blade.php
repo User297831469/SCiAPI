@@ -306,7 +306,6 @@
         var electronShape = new THREE.SphereGeometry(20, 20, 20);
         var electron1 = new THREE.Mesh(electronShape, cover);
         nucleus.add(electron1);
-
         electron1.position.set(-150,150,0);
 
         var electron2 = new THREE.Mesh(electronShape, cover);
@@ -325,6 +324,7 @@
         var clock = new THREE.Clock();
 
         function animate() {
+
             requestAnimationFrame(animate);
 
             var t = clock.getElapsedTime();

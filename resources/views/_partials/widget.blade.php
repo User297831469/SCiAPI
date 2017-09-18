@@ -45,37 +45,37 @@
         </div>
     </div>
 </div>
-<script>
-    $(".my-tool-tip-" + "{{ $widget->id }}").tooltip();
+{{--<script>--}}
+    {{--$(".my-tool-tip-" + "{{ $widget->id }}").tooltip();--}}
 
-    function {{ str_replace(" ", "_", $widget->name).'Func' }}() {
-        var code = "";
-        @foreach(explode("\n", $widget->code) as $line)
-                code += " {{ str_replace(array("\n", "\r"), '', $line) }}";
-                @endforeach
-        var func = new Function("return " + code)();
-        var params = code.split("(")[1].split(")")[0].split(",");
-        var title = code.split("(")[0].split(" ")[2];
-        for (var param in params) {
-            var field = '<div class="row label-{{ $widget->id }}">' +
-                    '<h4><b>' + params[param].split('_').join(' ') + '</b></h4>' +
-                    '</div>' +
-                    '<div class="row form-{{ $widget->id }}">' +
-                    '<input required id="' + params[param] + '-{{ $widget->id }}' + '" name="' + params[param] + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
-                    '</div>';
-            $('#menu-{{ $widget->id }}-3').prepend(field);
-        }
-        $('#submit-{{ $widget->id }}-btn').on('click', function () {
-            var values = [];
-            for (var param in params) {
-                values.push($('#' + params[param] + '-{{ $widget->id }}').val());
-            }
-            var result = func.apply(null, values);
-            alert("The solution to the " + title + " problem is " + result.toFixed(2));
-        });
-    };
-    {{ str_replace(" ", "_", $widget->name).'Func' }}();
-</script>
+    {{--function {{ str_replace(" ", "_", $widget->name).'Func' }}() {--}}
+        {{--var code = "";--}}
+        {{--@foreach(explode("\n", $widget->code) as $line)--}}
+                {{--code += " {{ str_replace(array("\n", "\r"), '', $line) }}";--}}
+        {{--@endforeach--}}
+        {{--var func = new Function("return " + code)();--}}
+        {{--var params = code.split("(")[1].split(")")[0].split(",");--}}
+        {{--var title = code.split("(")[0].split(" ")[2];--}}
+        {{--for (var param in params) {--}}
+            {{--var field = '<div class="row label-{{ $widget->id }}">' +--}}
+                    {{--'<h4><b>' + params[param].split('_').join(' ') + '</b></h4>' +--}}
+                    {{--'</div>' +--}}
+                    {{--'<div class="row form-{{ $widget->id }}">' +--}}
+                    {{--'<input required id="' + params[param] + '-{{ $widget->id }}' + '" name="' + params[param] + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +--}}
+                    {{--'</div>';--}}
+            {{--$('#menu-{{ $widget->id }}-3').prepend(field);--}}
+        {{--}--}}
+        {{--$('#submit-{{ $widget->id }}-btn').on('click', function () {--}}
+            {{--var values = [];--}}
+            {{--for (var param in params) {--}}
+                {{--values.push($('#' + params[param] + '-{{ $widget->id }}').val());--}}
+            {{--}--}}
+            {{--var result = func.apply(null, values);--}}
+            {{--alert("The solution to the " + title + " problem is " + result.toFixed(2));--}}
+        {{--});--}}
+    {{--};--}}
+    {{--{{ str_replace(" ", "_", $widget->name).'Func' }}();--}}
+{{--</script>--}}
 <style>
 
     #name-{{ $widget->id }} {
