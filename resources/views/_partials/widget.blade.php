@@ -128,7 +128,7 @@
 
     #tabs-{{ $widget->id }} {
         overflow-y:scroll;
-        height:260px;
+        height:310px;
     }
 
     #img-container-{{ $widget->id }} {
