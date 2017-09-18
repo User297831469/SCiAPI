@@ -84,7 +84,7 @@
     }
 
     #body-{{ $widget->id }} {
-        height: 350px;
+        height: 400px;
     }
 
     #tool-tip-{{ $widget->id }} {
