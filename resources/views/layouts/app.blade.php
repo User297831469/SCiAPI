@@ -44,6 +44,9 @@
         <!-- three.js-->
         <script src="js/three.min.js"></script>
 
+        <!-- math.js -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.14.2/math.min.js"></script>
+
     </head>
     <body>
         <div id="app">
