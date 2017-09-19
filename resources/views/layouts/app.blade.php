@@ -70,6 +70,9 @@
                                 <a href="#api">API</a>
                             </li>
                             <li>
+                                <a href="#application">App</a>
+                            </li>
+                            <li>
                                 <a href="#library">Library</a>
                             </li>
                             <li>

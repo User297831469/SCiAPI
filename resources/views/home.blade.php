@@ -74,6 +74,32 @@
             </div>
         </div>
 
+        <div id="application">
+            <div class="row">
+                <!-- Jumbotron -->
+                <div class="jumbotron">
+                    <div class="col-md-4 text-center">
+                        <img src="img/phone.png" class="img-responsive center" id="phone-img" alt="">
+                        <br>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row space-large">
+                            <p>
+                                Access the computations of SciAPI through the Android application, SciAPI Mobile. Download the app for free from the Google Play Store.
+                            </p>
+                        </div>
+                        <br>
+                        <div class="row text-center centered center-block">
+                            <a href="https://play.google.com/store/apps/details?id=com.sciapimobile"><img style="width: 200px;" src="img/google-play-badge.svg" class="centered" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <hr>
+            </div>
+        </div>
+
         <div id="library">
             <div class="row">
                 <!-- Jumbotron -->
