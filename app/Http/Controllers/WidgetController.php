@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use SSH;
+use DB;
 
 
 class WidgetController
@@ -158,7 +159,7 @@ class WidgetController
             }
 
             $name = implode(' ', explode('_', $function_name)); // get name in space delimited format
-            $widget = Widgets::where('name', '=', $name)->first(); // get the widget by name
+            $widget = DB::table('widgets')->whereRaw( 'LOWER(name) like ?', array( strtolower($name) ))->first(); // get the widget by name, case insensitive
 
             if (!is_null($widget)) { // if it is found
 
