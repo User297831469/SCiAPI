@@ -180,7 +180,7 @@
 
                         @else
 
-                            @include('_partials.widget', ['widget' => $widget])
+                            @include('_partials.widget', ['widget' => $widget, 'lite' => false])
 
                         @endif
 
