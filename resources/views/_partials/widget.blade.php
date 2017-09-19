@@ -5,13 +5,13 @@
         </div>
         <div id="body-{{ $widget->id }}" class="caption">
             <div class="row text-center">
-                <h3 id="name-{{ $widget->id }}">{{ $widget->name }}</h3><a class="my-tool-tip-{{ $widget->id }}" id="tool-tip-{{ $widget->id }}" data-toggle="tooltip" data-placement="top" title="You don't have permission to edit this widget. Think something is missing or could be done better? Sign up for SCiAPI to contribute!" @if($lite == false) href="{{ route('home') }}" @endif><i class="fa fa-pencil-square fa-fw"></i></a>
+                <h3 id="name-{{ $widget->id }}">{{ $widget->name }}</h3><a class="my-tool-tip-{{ $widget->id }}" id="tool-tip-{{ $widget->id }}" data-toggle="tooltip" data-placement="top" title="You don't have permission to edit this widget. Think something is missing or could be done better? Sign up for SciAPI at www.sciapi.com to contribute!" @if($lite == false) href="{{ route('home') }}" @endif><i class="fa fa-pencil-square fa-fw"></i></a>
             </div>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img id="tab-1-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/atom-icon.png" alt="f(x)"></a></li>
                 <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img id="tab-2-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/logo-JavaScript.png" alt="JS"></a></li>
                 <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img id="tab-3-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/calc-icon.png" alt="Calc"></a></li>
-                @if(!is_null($widget->wolfram))
+                @if(!is_null($widget->wolfram) && ($lite == false))
                     <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-4"><img id="tab-4-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
                 @endif
             </ul>

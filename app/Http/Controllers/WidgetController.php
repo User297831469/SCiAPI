@@ -215,7 +215,7 @@ class WidgetController
 
                         } else { // a parameter could not be found
 
-                            if (!($input == 'Content-Type') && !($input == '_api_key')) { // exclude validation on content-type and _api_key post parameters
+                            if (!($input == 'Content-Type') && !($input == '_api_key') && !($input == 'type')) { // exclude validation on content-type and _api_key post parameters
 
                                 return response()->json([
                                     'code' => 'parameter error',
@@ -233,7 +233,7 @@ class WidgetController
                 }
 
                 $lite = false;
-                if(!is_null($request->input('type')) && $request->input('type') == 'lite'){ // check if the lite widget version was requested
+                if(!is_null($request->input('type')) && ($request->input('type') == 'lite')){ // check if the lite widget version was requested
                     $lite = true;
                 }
 
