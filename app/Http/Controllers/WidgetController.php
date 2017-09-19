@@ -232,7 +232,12 @@ class WidgetController
                     $code = implode("\n", $function_lines); // merge the code segments back together
                 }
 
-                $partial = view('_partials.widget', ['widget' => $widget]); // the widget partial blade template
+                $lite = false;
+                if(!is_null($request->input('type')) && $request->input('type') == 'lite'){ // check if the lite widget version was requested
+                    $lite = true;
+                }
+
+                $partial = view('_partials.widget', ['widget' => $widget, 'lite' => $lite]); // the widget partial blade template
                 $rendered = $partial->render(); // render the widget
 
                 return response()->json([

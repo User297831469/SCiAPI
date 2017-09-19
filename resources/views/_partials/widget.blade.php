@@ -5,7 +5,7 @@
         </div>
         <div id="body-{{ $widget->id }}" class="caption">
             <div class="row text-center">
-                <h3 id="name-{{ $widget->id }}">{{ $widget->name }}</h3><a class="my-tool-tip-{{ $widget->id }}" id="tool-tip-{{ $widget->id }}" data-toggle="tooltip" data-placement="top" title="You don't have permission to edit this widget. Think something is missing or could be done better? Sign up for SCiAPI to contribute!" href="{{ route('home') }}"><i class="fa fa-pencil-square fa-fw"></i></a>
+                <h3 id="name-{{ $widget->id }}">{{ $widget->name }}</h3><a class="my-tool-tip-{{ $widget->id }}" id="tool-tip-{{ $widget->id }}" data-toggle="tooltip" data-placement="top" title="You don't have permission to edit this widget. Think something is missing or could be done better? Sign up for SCiAPI to contribute!" @if($lite == false) href="{{ route('home') }}" @endif><i class="fa fa-pencil-square fa-fw"></i></a>
             </div>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img id="tab-1-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/atom-icon.png" alt="f(x)"></a></li>
@@ -36,7 +36,7 @@
                 <div id="menu-{{ $widget->id }}-3" class="tab-pane fade text-left">
                     <button class="btn btn-success" id="submit-{{ $widget->id }}-btn">Calculate</button>
                 </div>
-                @if(!is_null($widget->wolfram))
+                @if(!is_null($widget->wolfram) && ($lite == false))
                     <div id="menu-{{ $widget->id }}-4" class="tab-pane fade">
                         {!! html_entity_decode($widget->wolfram) !!}
                     </div>
