@@ -220,7 +220,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p><a href="http://www.sigmadev.ca">SIGMA Development</a> 2017</p>
+                    <p>Copyright © 2017 by <a href="http://www.sigmadev.ca">SIGMA Development</a> 2017</p>
                 </div>
             </div>
         </footer>
