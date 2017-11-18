@@ -47,6 +47,9 @@
         <!-- math.js -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.14.2/math.min.js"></script>
 
+        <!-- sciapilib.js -->
+        <script src="js/sciapilib.js"></script>
+
     </head>
     <body>
         <div id="app">

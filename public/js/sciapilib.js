@@ -2,6 +2,13 @@ var API_KEY = "123456789abcdefghijklmnopqrstuvwxyz";    // Get an API key by sig
 
 var sciapi = {};
 
+var QEDOperations = {
+    0: "X",
+    1: "Y",
+    2: "Z",
+    3: "H"
+};
+
 var mathjs = document.createElement('script');          // Imports math.js
 mathjs.src = "http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.14.2/math.min.js";
 document.head.appendChild(mathjs);
@@ -37,3 +44,35 @@ $.post('https://sciapi.herokuapp.com/list',
             console.log("An API error occurred: " + data.message);
         }
     });
+
+//install firebase
+function initFirebase(){
+    document.write('<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"><\/script>');
+    // initialize firebase
+    var config = {
+        apiKey: "AIzaSyBufTBL0usG9NB6KDNx0pxl9QMIHpd2_mM",
+        authDomain: "qed-database.firebaseapp.com",
+        databaseURL: "https://qed-database.firebaseio.com",
+        projectId: "qed-database",
+        storageBucket: "qed-database.appspot.com",
+        messagingSenderId: "501436822535"
+    };
+    firebase.initializeApp(config);
+}
+
+window.firebase || initFirebase();
+
+$(document).ready(function(){
+    sciapi[QEDCompute] = function(operationID,deviceID,alpha,beta){
+        var updates = {};
+        var operationObject = {};
+        operationObject[QEDOperations[operationID]] = [alpha,beta];
+        updates['/devices/' + deviceID] = operationObject;
+        firebase.database().ref().update(updates).then(function(){
+            firebase.database().ref().child('devices/' + deviceID).on("value", function (snapshot) {
+                var nextAlpha = snapshot.val().result;
+                alert('Computed result of' + QEDOperations[operationID] + '(' + alpha.toString() + ',' + beta.toString() +'): ' + nextAlpha.toString());
+            });
+        });
+    }
+});
