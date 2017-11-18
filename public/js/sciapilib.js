@@ -65,15 +65,20 @@ function initFirebase(){
 
 $(document).ready(function(){
     initFirebase();
-    sciapi["QEDCompute"] = function(operationID,deviceID,alpha,beta){
+    sciapi["QEDCompute"] = function(operationID,deviceID,alpha,beta,callback){
+        console.log("Calling on QED");
         var updates = {};
         var operationObject = {};
         operationObject[QEDOperations[operationID]] = [alpha,beta];
         updates['/devices/' + deviceID] = operationObject;
         firebase.database().ref().update(updates).then(function(){
             firebase.database().ref().child('devices/' + deviceID).on("value", function (snapshot) {
-                var nextAlpha = snapshot.val().result;
-                alert('Computed result of' + QEDOperations[operationID] + '(' + alpha.toString() + ',' + beta.toString() +'): ' + nextAlpha.toString());
+                console.log(snapshot.val());
+                if(snapshot.val().hasOwnProperty('result')) {
+                    var nextAlpha = snapshot.val().result;
+                    alert('Computed result of' + QEDOperations[operationID] + '(' + alpha.toString() + ',' + beta.toString() + '): ' + nextAlpha.toString());
+                    callback(nextAlpha);
+                }
             });
         });
     }

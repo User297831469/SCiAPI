@@ -70,7 +70,12 @@
                 values.push($('#' + params[param] + '-{{ $widget->id }}').val());
             }
             var result = func.apply(null,values);
-            alert("The solution to the " + title + " problem is " + result.toFixed(2));
+            if(typeof(result) == 'number'){
+                alert("The solution to the " + title + " problem is " + result.toFixed(3));
+            }
+            else{
+                alert("The solution to the " + title + " problem is " + result);
+            }
         });
     };
     {{ str_replace(" ", "_", $widget->name).'Func' }}();

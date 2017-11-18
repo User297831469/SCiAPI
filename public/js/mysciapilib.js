@@ -65,7 +65,7 @@ function initFirebase(){
 
 $(document).ready(function(){
     initFirebase();
-    sciapi["QEDCompute"] = function(operationID,deviceID,alpha,beta){
+    sciapi["QEDCompute"] = function(operationID,deviceID,alpha,beta,callback){
         console.log("Calling on QED");
         var updates = {};
         var operationObject = {};
@@ -77,6 +77,7 @@ $(document).ready(function(){
                 if(snapshot.val().hasOwnProperty('result')) {
                     var nextAlpha = snapshot.val().result;
                     alert('Computed result of' + QEDOperations[operationID] + '(' + alpha.toString() + ',' + beta.toString() + '): ' + nextAlpha.toString());
+                    callback(nextAlpha);
                 }
             });
         });
