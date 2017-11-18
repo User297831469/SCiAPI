@@ -44,11 +44,8 @@
         <!-- three.js-->
         <script src="js/three.min.js"></script>
 
-        <!-- math.js -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.14.2/math.min.js"></script>
-
         <!-- sciapilib.js -->
-        <script src="js/sciapilib.js"></script>
+        <script src="js/mysciapilib.js"></script>
 
     </head>
     <body>

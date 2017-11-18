@@ -1,4 +1,4 @@
-var API_KEY = "123456789abcdefghijklmnopqrstuvwxyz";    // Get an API key by signing up for free!
+var API_KEY = "$2y$10$5a1NNdQKUuQyvMwxf.KC0.RLf60fwaPR/v0/raLyGrnoHCjdckfE2";    // Get an API key by signing up for free!
 
 var sciapi = {};
 
@@ -66,14 +66,18 @@ function initFirebase(){
 $(document).ready(function(){
     initFirebase();
     sciapi["QEDCompute"] = function(operationID,deviceID,alpha,beta){
+        console.log("Calling on QED");
         var updates = {};
         var operationObject = {};
         operationObject[QEDOperations[operationID]] = [alpha,beta];
         updates['/devices/' + deviceID] = operationObject;
         firebase.database().ref().update(updates).then(function(){
             firebase.database().ref().child('devices/' + deviceID).on("value", function (snapshot) {
-                var nextAlpha = snapshot.val().result;
-                alert('Computed result of' + QEDOperations[operationID] + '(' + alpha.toString() + ',' + beta.toString() +'): ' + nextAlpha.toString());
+                console.log(snapshot.val());
+                if(snapshot.val().hasOwnProperty('result')) {
+                    var nextAlpha = snapshot.val().result;
+                    alert('Computed result of' + QEDOperations[operationID] + '(' + alpha.toString() + ',' + beta.toString() + '): ' + nextAlpha.toString());
+                }
             });
         });
     }
