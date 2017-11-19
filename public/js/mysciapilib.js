@@ -75,8 +75,8 @@ $(document).ready(function(){
             firebase.database().ref().child('devices/' + deviceID).on("value", function (snapshot) {
                 console.log(snapshot.val());
                 Object.keys(snapshot.val()).map(function (snapKey, index) {
+                    console.log(snapshot.val()[snapKey]);
                     if (snapshot.val()[snapKey].hasOwnProperty('result')) {
-
                         var nextAlpha = snapshot.val()[snapKey]['result'];
                         alert('Computed result of' + QEDOperations[operationID] + '(' + alpha.toString() + ',' + beta.toString() + '): ' + nextAlpha.toString());
                         callback(nextAlpha);
