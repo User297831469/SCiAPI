@@ -74,11 +74,14 @@ $(document).ready(function(){
         firebase.database().ref().update(updates).then(function(){
             firebase.database().ref().child('devices/' + deviceID).on("value", function (snapshot) {
                 console.log(snapshot.val());
-                if(snapshot.val().hasOwnProperty('result')) {
-                    var nextAlpha = snapshot.val().result;
-                    alert('Computed result of' + QEDOperations[operationID] + '(' + alpha.toString() + ',' + beta.toString() + '): ' + nextAlpha.toString());
-                    callback(nextAlpha);
-                }
+                Object.keys(snapshot.val()).map(function (snapKey, index) {
+                    if (snapshot.val()[snapKey].hasOwnProperty('result')) {
+
+                        var nextAlpha = snapshot.val()[snapKey]['result'];
+                        alert('Computed result of' + QEDOperations[operationID] + '(' + alpha.toString() + ',' + beta.toString() + '): ' + nextAlpha.toString());
+                        callback(nextAlpha);
+                    }
+                });
             });
         });
     }
