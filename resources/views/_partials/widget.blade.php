@@ -9,7 +9,9 @@
             </div>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home-{{ $widget->id }}"><img id="tab-1-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/atom-icon.png" alt="f(x)"></a></li>
-                <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img id="tab-2-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/logo-JavaScript.png" alt="JS"></a></li>
+                @if($lite == false)
+                    <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-2"><img id="tab-2-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/logo-JavaScript.png" alt="JS"></a></li>
+                @endif
                 <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-3"><img id="tab-3-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/calc-icon.png" alt="Calc"></a></li>
                 @if(!is_null($widget->wolfram) && ($lite == false))
                     <li><a data-toggle="tab" href="#menu-{{ $widget->id }}-4"><img id="tab-4-{{ $widget->id }}" src="http://www.datablue.stream/SCiAPI/logo-wolfram-alpha.png" alt="Wolfram"></a></li>
@@ -26,13 +28,15 @@
                         </p>
                     </div>
                 </div>
-                <div id="menu-{{ $widget->id }}-2" class="tab-pane fade text-left">
-                    <pre id="code-{{ $widget->id }}">
-                         @foreach(explode("\n", $widget->code) as $line)
-                            <span>{{ $line }}</span>
-                         @endforeach
-                    </pre>
-                </div>
+                @if($lite == false)
+                    <div id="menu-{{ $widget->id }}-2" class="tab-pane fade text-left">
+                        <pre id="code-{{ $widget->id }}">
+                             @foreach(explode("\n", $widget->code) as $line)
+                                <span>{{ $line }}</span>
+                             @endforeach
+                        </pre>
+                    </div>
+                @endif
                 <div id="menu-{{ $widget->id }}-3" class="tab-pane fade text-left">
                     <button class="btn btn-success" id="submit-{{ $widget->id }}-btn">Calculate</button>
                 </div>
@@ -57,12 +61,21 @@
         var params = code.split("(")[1].split(")")[0].split(",");
         var title = code.split("(")[0].split(" ")[2];
         for (var param in params) {
+            @if($lite == false)
+                var field = '<div class="row label-{{ $widget->id }}">' +
+                        '<h4><b>' + params[param].split('_').join(' ') + '</b></h4>' +
+                        '</div>' +
+                        '<div class="row form-{{ $widget->id }}">' +
+                        '<input required id="' + params[param] + '-{{ $widget->id }}' + '" name="' + params[param] + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
+                        '</div>';
+            @else
             var field = '<div class="row label-{{ $widget->id }}">' +
-                    '<h4><b>' + params[param].split('_').join(' ') + '</b></h4>' +
-                    '</div>' +
-                    '<div class="row form-{{ $widget->id }}">' +
-                    '<input required id="' + params[param] + '-{{ $widget->id }}' + '" name="' + params[param] + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
-                    '</div>';
+                        '<p><b>' + params[param].split('_').join(' ') + '</b></p>' +
+                        '</div>' +
+                        '<div class="row form-{{ $widget->id }}">' +
+                        '<input required id="' + params[param] + '-{{ $widget->id }}' + '" name="' + params[param] + '-{{ $widget->id }}' + '" type="number" class="form-control" placeholder="1">' +
+                        '</div>';
+            @endif
             $('#menu-{{ $widget->id }}-3').prepend(field);
         }
         $('#submit-{{ $widget->id }}-btn').on('click', function () {
@@ -89,7 +102,9 @@
     }
 
     #body-{{ $widget->id }} {
-        height: 400px;
+        @if($lite == false)
+            height: 400px;
+        @endif
     }
 
     #tool-tip-{{ $widget->id }} {
@@ -133,7 +148,9 @@
 
     #tabs-{{ $widget->id }} {
         overflow-y:scroll;
-        height:310px;
+        @if($lite == false)
+            height:310px;
+        @endif
     }
 
     #img-container-{{ $widget->id }} {
