@@ -100,6 +100,33 @@
             </div>
         </div>
 
+        <div id="scidev">
+            <div class="row">
+                <!-- Jumbotron -->
+                <div class="jumbotron">
+                    <div class="col-md-4 text-center">
+                        <img src="img/scidevscreen.png" class="img-responsive center" id="scidevscreen-img" alt="">
+                        <br>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row space-large">
+                            <p>
+                                A desktop integrated development environment that comes with the SciAPI library setup and ready to go. The app includes easy access to the visual computation widgets
+                                if SciAPI as well as code syntax checking, native JavaScript compilation and debugging tools, code highlighting and basic file CRUD.
+                            </p>
+                        </div>
+                        <br>
+                        <div class="row text-center centered center-block">
+                            <h2>Coming Soon!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <hr>
+            </div>
+        </div>
+
         <div id="library">
             <div class="row">
                 <!-- Jumbotron -->
